@@ -1,446 +1,780 @@
 <mxfile host="Electron">
   <diagram name="Page-1" id="Yse1vGmpNIFC-IZ13WNN">
-    <mxGraphModel dx="2175" dy="1285" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="-881" dy="-1147" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" background="light-dark(#FFFFFF,#FFFFFF)" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <UserObject label="" mermaidData="{&#xa;  &quot;data&quot;: &quot;sequenceDiagram\n    actor Student\n    actor Landlord\n    participant System\n    participant AIEngine as AI Engine\n    participant Database\n    participant NotificationService as Notification Service\n\n    Landlord-&gt;&gt;System: Register, Upload National ID &amp; Add Housing Listing\n    System-&gt;&gt;Database: Verify Landlord (Admin Approval) &amp; Save Listing\n    Database--&gt;&gt;System: Listing &amp; Verification Saved\n    System--&gt;&gt;Landlord: Display Verified Badge &amp; Published Listing\n    \n    Student-&gt;&gt;System: Login &amp; Save Profile Preferences\n    Student-&gt;&gt;System: Search &amp; Filter Housing\n    System-&gt;&gt;Database: Get Available Housing Listings\n    Database--&gt;&gt;System: Housing Listings\n    System--&gt;&gt;Student: Display Filtered Results\n    \n    Student-&gt;&gt;System: Request AI Recommendations / Ask AI Assistant\n    System-&gt;&gt;Database: Get Student Preferences &amp; Available Listings\n    Database--&gt;&gt;System: Preferences &amp; Eligible Listings\n    System-&gt;&gt;AIEngine: Analyze Preferences &amp; Listings\n    AIEngine--&gt;&gt;System: Ranked Recommendations + Match Explanation\n    System--&gt;&gt;Student: Display AI Housing Results &amp; Explanations\n    \n    Student-&gt;&gt;System: Select Housing (Room/Bed) &amp; Submit Booking\n    System-&gt;&gt;Database: Check Availability &amp; Active Booking Constraints\n    \n    alt Housing Available\n        System-&gt;&gt;Database: Create Booking Request (Pending)\n        System-&gt;&gt;NotificationService: Notify Landlord\n        NotificationService--&gt;&gt;Landlord: New Booking Request\n        Landlord-&gt;&gt;System: Accept or Reject Request\n        \n        alt Request Accepted\n            System-&gt;&gt;Database: Update Status (Accepted) &amp; Available Places\n            System-&gt;&gt;NotificationService: Notify Student to Complete Payment\n            NotificationService--&gt;&gt;Student: Booking Accepted (Pending Payment)\n            Student-&gt;&gt;System: Complete Online Payment within Time Limit\n            System-&gt;&gt;Database: Log Transaction &amp; Confirm Booking\n        else Request Rejected\n            System-&gt;&gt;Database: Update Booking Status (Rejected)\n            System-&gt;&gt;NotificationService: Notify Student\n            NotificationService--&gt;&gt;Student: Booking Rejected\n        end\n        \n    else Housing Unavailable\n        System--&gt;&gt;Student: Display Not Available\n    end\n    \n    Student-&gt;&gt;System: Submit Review and Star Rating\n    System-&gt;&gt;Database: Save Review and Update Average Rating\n    Database--&gt;&gt;System: Review Saved\n    System--&gt;&gt;Student: Display Updated Rating&quot;,&#xa;  &quot;config&quot;: null,&#xa;  &quot;version&quot;: &quot;12&quot;&#xa;}" id="D5UTqvl_Tlhye1wxJ2xY-1">
-          <mxCell connectable="0" parent="1" style="group;transparentBounds=1;editIcon=1;lockedGroup=0;groupPadding=10;" vertex="1">
-            <mxGeometry as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Student" mermaidId="n:Student" mermaidBaseStyle="html=1;shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;sequenceEdgeStyle&quot;,&quot;libavoidRouting&quot;:0,&quot;curved&quot;:0,&quot;rounded&quot;:0};lifelineDashed=0;strokeWidth=2;rounded=1;absoluteArcSize=1;arcSize=12;lifelineColor=#28253D;fillColor=#FDF4FF;strokeColor=#E879F9;fontColor=#28253D;participant=seqActorStick;verticalAlign=bottom;align=center;spacingBottom=4;size=90;lifelineMirror=1;fontFamily=Recursive;fontSize=16;shadow=1;shadowColor=#000000;shadowOffsetX=4;shadowOffsetY=4;shadowBlur=0;shadowOpacity=6;" mermaidBaseValue="Student" id="D5UTqvl_Tlhye1wxJ2xY-2">
-          <mxCell parent="D5UTqvl_Tlhye1wxJ2xY-1" style="html=1;shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;sequenceEdgeStyle&quot;,&quot;libavoidRouting&quot;:0,&quot;curved&quot;:0,&quot;rounded&quot;:0};lifelineDashed=0;strokeWidth=2;rounded=1;absoluteArcSize=1;arcSize=12;lifelineColor=#28253D;fillColor=#FDF4FF;strokeColor=#E879F9;fontColor=#28253D;participant=seqActorStick;verticalAlign=bottom;align=center;spacingBottom=4;size=90;lifelineMirror=1;fontFamily=Recursive;fontSize=16;shadow=1;shadowColor=#000000;shadowOffsetX=4;shadowOffsetY=4;shadowBlur=0;shadowOpacity=6;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" vertex="1">
-            <mxGeometry height="1947" width="150" x="584" y="554" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Landlord" mermaidId="n:Landlord" mermaidBaseStyle="html=1;shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;sequenceEdgeStyle&quot;,&quot;libavoidRouting&quot;:0,&quot;curved&quot;:0,&quot;rounded&quot;:0};lifelineDashed=0;strokeWidth=2;rounded=1;absoluteArcSize=1;arcSize=12;lifelineColor=#28253D;fillColor=#F0FDFA;strokeColor=#2DD4BF;fontColor=#28253D;participant=seqActorStick;verticalAlign=bottom;align=center;spacingBottom=4;size=90;lifelineMirror=1;fontFamily=Recursive;fontSize=16;shadow=1;shadowColor=#000000;shadowOffsetX=4;shadowOffsetY=4;shadowBlur=0;shadowOpacity=6;" mermaidBaseValue="Landlord" id="D5UTqvl_Tlhye1wxJ2xY-3">
-          <mxCell parent="D5UTqvl_Tlhye1wxJ2xY-1" style="html=1;shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;sequenceEdgeStyle&quot;,&quot;libavoidRouting&quot;:0,&quot;curved&quot;:0,&quot;rounded&quot;:0};lifelineDashed=0;strokeWidth=2;rounded=1;absoluteArcSize=1;arcSize=12;lifelineColor=#28253D;fillColor=#F0FDFA;strokeColor=#2DD4BF;fontColor=#28253D;participant=seqActorStick;verticalAlign=bottom;align=center;spacingBottom=4;size=90;lifelineMirror=1;fontFamily=Recursive;fontSize=16;shadow=1;shadowColor=#000000;shadowOffsetX=4;shadowOffsetY=4;shadowBlur=0;shadowOpacity=6;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" vertex="1">
-            <mxGeometry height="1947" width="150" x="784" y="554" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="System" mermaidId="n:System" mermaidBaseStyle="html=1;shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;sequenceEdgeStyle&quot;,&quot;libavoidRouting&quot;:0,&quot;curved&quot;:0,&quot;rounded&quot;:0};lifelineDashed=0;strokeWidth=2;rounded=1;absoluteArcSize=1;arcSize=12;lifelineColor=#28253D;fillColor=#FFF7ED;strokeColor=#FB923C;fontColor=#28253D;size=73;lifelineMirror=1;fontFamily=Recursive;fontSize=16;shadow=1;shadowColor=#000000;shadowOffsetX=4;shadowOffsetY=4;shadowBlur=0;shadowOpacity=6;" mermaidBaseValue="System" id="D5UTqvl_Tlhye1wxJ2xY-4">
-          <mxCell parent="D5UTqvl_Tlhye1wxJ2xY-1" style="html=1;shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;sequenceEdgeStyle&quot;,&quot;libavoidRouting&quot;:0,&quot;curved&quot;:0,&quot;rounded&quot;:0};lifelineDashed=0;strokeWidth=2;rounded=1;absoluteArcSize=1;arcSize=12;lifelineColor=#28253D;fillColor=#FFF7ED;strokeColor=#FB923C;fontColor=#28253D;size=73;lifelineMirror=1;fontFamily=Recursive;fontSize=16;shadow=1;shadowColor=#000000;shadowOffsetX=4;shadowOffsetY=4;shadowBlur=0;shadowOpacity=6;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" vertex="1">
-            <mxGeometry height="1930" width="150" x="1176" y="554" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="AI Engine" mermaidId="n:AIEngine" mermaidBaseStyle="html=1;shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;sequenceEdgeStyle&quot;,&quot;libavoidRouting&quot;:0,&quot;curved&quot;:0,&quot;rounded&quot;:0};lifelineDashed=0;strokeWidth=2;rounded=1;absoluteArcSize=1;arcSize=12;lifelineColor=#28253D;fillColor=#ECFEFF;strokeColor=#22D3EE;fontColor=#28253D;size=73;lifelineMirror=1;fontFamily=Recursive;fontSize=16;shadow=1;shadowColor=#000000;shadowOffsetX=4;shadowOffsetY=4;shadowBlur=0;shadowOpacity=6;" mermaidBaseValue="AI Engine" id="D5UTqvl_Tlhye1wxJ2xY-5">
-          <mxCell parent="D5UTqvl_Tlhye1wxJ2xY-1" style="html=1;shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;sequenceEdgeStyle&quot;,&quot;libavoidRouting&quot;:0,&quot;curved&quot;:0,&quot;rounded&quot;:0};lifelineDashed=0;strokeWidth=2;rounded=1;absoluteArcSize=1;arcSize=12;lifelineColor=#28253D;fillColor=#ECFEFF;strokeColor=#22D3EE;fontColor=#28253D;size=73;lifelineMirror=1;fontFamily=Recursive;fontSize=16;shadow=1;shadowColor=#000000;shadowOffsetX=4;shadowOffsetY=4;shadowBlur=0;shadowOpacity=6;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" vertex="1">
-            <mxGeometry height="1930" width="150" x="1537" y="554" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Database" mermaidId="n:Database" mermaidBaseStyle="html=1;shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;sequenceEdgeStyle&quot;,&quot;libavoidRouting&quot;:0,&quot;curved&quot;:0,&quot;rounded&quot;:0};lifelineDashed=0;strokeWidth=2;rounded=1;absoluteArcSize=1;arcSize=12;lifelineColor=#28253D;fillColor=#F0FDF4;strokeColor=#4ADE80;fontColor=#28253D;size=73;lifelineMirror=1;fontFamily=Recursive;fontSize=16;shadow=1;shadowColor=#000000;shadowOffsetX=4;shadowOffsetY=4;shadowBlur=0;shadowOpacity=6;" mermaidBaseValue="Database" id="D5UTqvl_Tlhye1wxJ2xY-6">
-          <mxCell parent="D5UTqvl_Tlhye1wxJ2xY-1" style="html=1;shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;sequenceEdgeStyle&quot;,&quot;libavoidRouting&quot;:0,&quot;curved&quot;:0,&quot;rounded&quot;:0};lifelineDashed=0;strokeWidth=2;rounded=1;absoluteArcSize=1;arcSize=12;lifelineColor=#28253D;fillColor=#F0FDF4;strokeColor=#4ADE80;fontColor=#28253D;size=73;lifelineMirror=1;fontFamily=Recursive;fontSize=16;shadow=1;shadowColor=#000000;shadowOffsetX=4;shadowOffsetY=4;shadowBlur=0;shadowOpacity=6;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" vertex="1">
-            <mxGeometry height="1930" width="150" x="1737" y="554" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Notification Service" mermaidId="n:NotificationService" mermaidBaseStyle="html=1;shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;sequenceEdgeStyle&quot;,&quot;libavoidRouting&quot;:0,&quot;curved&quot;:0,&quot;rounded&quot;:0};lifelineDashed=0;strokeWidth=2;rounded=1;absoluteArcSize=1;arcSize=12;lifelineColor=#28253D;fillColor=#F5F3FF;strokeColor=#A78BFA;fontColor=#28253D;size=73;lifelineMirror=1;fontFamily=Recursive;fontSize=16;shadow=1;shadowColor=#000000;shadowOffsetX=4;shadowOffsetY=4;shadowBlur=0;shadowOpacity=6;" mermaidBaseValue="Notification Service" id="D5UTqvl_Tlhye1wxJ2xY-7">
-          <mxCell parent="D5UTqvl_Tlhye1wxJ2xY-1" style="html=1;shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;sequenceEdgeStyle&quot;,&quot;libavoidRouting&quot;:0,&quot;curved&quot;:0,&quot;rounded&quot;:0};lifelineDashed=0;strokeWidth=2;rounded=1;absoluteArcSize=1;arcSize=12;lifelineColor=#28253D;fillColor=#F5F3FF;strokeColor=#A78BFA;fontColor=#28253D;size=73;lifelineMirror=1;fontFamily=Recursive;fontSize=16;shadow=1;shadowColor=#000000;shadowOffsetX=4;shadowOffsetY=4;shadowBlur=0;shadowOpacity=6;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" vertex="1">
-            <mxGeometry height="1930" width="150" x="1937" y="554" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="alt" mermaidId="n:f0" mermaidBaseStyle="html=1;shape=umlFrame;dashed=1;fixDash=1;dashPattern=2 2;strokeWidth=2;pointerEvents=0;dropTarget=0;fillColor=#ffffff;strokeColor=#28253D;fontSize=16;align=center;verticalAlign=middle;fontFamily=Recursive;fontColor=#28253D;height=35;width=50;" mermaidBaseValue="alt" id="D5UTqvl_Tlhye1wxJ2xY-8">
-          <mxCell parent="D5UTqvl_Tlhye1wxJ2xY-1" style="html=1;shape=umlFrame;dashed=1;fixDash=1;dashPattern=2 2;strokeWidth=2;pointerEvents=0;dropTarget=0;fillColor=#ffffff;strokeColor=#28253D;fontSize=16;align=center;verticalAlign=middle;fontFamily=Recursive;fontColor=#28253D;height=35;width=50;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" vertex="1">
-            <mxGeometry height="788" width="1393" x="639" y="1419" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <mxCell id="D5UTqvl_Tlhye1wxJ2xY-9" parent="D5UTqvl_Tlhye1wxJ2xY-8" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=16;fontFamily=Recursive;fontColor=#28253D;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="[Housing Available]" vertex="1">
-          <mxGeometry height="16" width="1339" x="54" y="2" as="geometry" />
+        <mxCell id="bQgdA-rsSVFerAGcApTa-137" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;strokeColor=#d63384;fillColor=#121212;fontColor=#e0e0e0;strokeWidth=2;fontSize=12;fontStyle=1;" value="Student" vertex="1">
+          <mxGeometry height="55" width="30" x="2678" y="2058" as="geometry" />
         </mxCell>
-        <mxCell id="D5UTqvl_Tlhye1wxJ2xY-10" parent="D5UTqvl_Tlhye1wxJ2xY-8" style="shape=line;dashed=1;fixDash=1;dashPattern=2 2;strokeColor=#28253D;" vertex="1">
-          <mxGeometry height="1" width="1393" y="702" as="geometry" />
+        <mxCell id="bQgdA-rsSVFerAGcApTa-138" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;strokeColor=#d63384;fillColor=#121212;fontColor=#e0e0e0;strokeWidth=2;fontSize=12;fontStyle=1;" value="Student" vertex="1">
+          <mxGeometry height="55" width="30" x="2678" y="6538" as="geometry" />
         </mxCell>
-        <mxCell id="D5UTqvl_Tlhye1wxJ2xY-11" parent="D5UTqvl_Tlhye1wxJ2xY-8" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=16;fontFamily=Recursive;fontColor=#28253D;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="[Housing Unavailable]" vertex="1">
-          <mxGeometry height="16" width="1393" y="704" as="geometry" />
+        <mxCell id="bQgdA-rsSVFerAGcApTa-139" edge="1" parent="1" style="endArrow=none;dashed=0;html=1;strokeColor=#888888;strokeWidth=1.5;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="2693" y="2133" as="sourcePoint" />
+            <mxPoint x="2693" y="6538" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
-        <UserObject label="alt" mermaidId="n:f1" mermaidBaseStyle="html=1;shape=umlFrame;dashed=1;fixDash=1;dashPattern=2 2;strokeWidth=2;pointerEvents=0;dropTarget=0;fillColor=#ffffff;strokeColor=#28253D;fontSize=16;align=center;verticalAlign=middle;fontFamily=Recursive;fontColor=#28253D;height=35;width=50;" mermaidBaseValue="alt" id="D5UTqvl_Tlhye1wxJ2xY-12">
-          <mxCell parent="D5UTqvl_Tlhye1wxJ2xY-1" style="html=1;shape=umlFrame;dashed=1;fixDash=1;dashPattern=2 2;strokeWidth=2;pointerEvents=0;dropTarget=0;fillColor=#ffffff;strokeColor=#28253D;fontSize=16;align=center;verticalAlign=middle;fontFamily=Recursive;fontColor=#28253D;height=35;width=50;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" vertex="1">
-            <mxGeometry height="458" width="1373" x="649" y="1648" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <mxCell id="D5UTqvl_Tlhye1wxJ2xY-13" parent="D5UTqvl_Tlhye1wxJ2xY-12" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=16;fontFamily=Recursive;fontColor=#28253D;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="[Request Accepted]" vertex="1">
-          <mxGeometry height="16" width="1319" x="54" y="2" as="geometry" />
+        <mxCell id="bQgdA-rsSVFerAGcApTa-140" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;strokeColor=#4caf50;fillColor=#121212;fontColor=#e0e0e0;strokeWidth=2;fontSize=12;fontStyle=1;" value="Landlord" vertex="1">
+          <mxGeometry height="55" width="30" x="2878" y="2058" as="geometry" />
         </mxCell>
-        <mxCell id="D5UTqvl_Tlhye1wxJ2xY-14" parent="D5UTqvl_Tlhye1wxJ2xY-12" style="shape=line;dashed=1;fixDash=1;dashPattern=2 2;strokeColor=#28253D;" vertex="1">
-          <mxGeometry height="1" width="1373" y="280" as="geometry" />
+        <mxCell id="bQgdA-rsSVFerAGcApTa-141" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;strokeColor=#4caf50;fillColor=#121212;fontColor=#e0e0e0;strokeWidth=2;fontSize=12;fontStyle=1;" value="Landlord" vertex="1">
+          <mxGeometry height="55" width="30" x="2878" y="6538" as="geometry" />
         </mxCell>
-        <mxCell id="D5UTqvl_Tlhye1wxJ2xY-15" parent="D5UTqvl_Tlhye1wxJ2xY-12" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=16;fontFamily=Recursive;fontColor=#28253D;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="[Request Rejected]" vertex="1">
-          <mxGeometry height="16" width="1373" y="282" as="geometry" />
+        <mxCell id="bQgdA-rsSVFerAGcApTa-142" edge="1" parent="1" style="endArrow=none;dashed=0;html=1;strokeColor=#888888;strokeWidth=1.5;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="2893" y="2133" as="sourcePoint" />
+            <mxPoint x="2893" y="6538" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
-        <UserObject label="Register, Upload National ID &amp; Add Housing Listing" mermaidId="e:Landlord-&gt;System#0" mermaidBaseStyle="endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;" mermaidBaseValue="Register, Upload National ID &amp; Add Housing Listing" id="D5UTqvl_Tlhye1wxJ2xY-16">
-          <mxCell edge="1" parent="D5UTqvl_Tlhye1wxJ2xY-1" source="D5UTqvl_Tlhye1wxJ2xY-3" style="endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" target="D5UTqvl_Tlhye1wxJ2xY-4">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1055" y="673" />
-              </Array>
-              <mxPoint x="859" y="673" as="sourcePoint" />
-              <mxPoint x="1251" y="673" as="targetPoint" />
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-        <UserObject label="Verify Landlord (Admin Approval) &amp; Save Listing" mermaidId="e:System-&gt;Database#0" mermaidBaseStyle="endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;" mermaidBaseValue="Verify Landlord (Admin Approval) &amp; Save Listing" id="D5UTqvl_Tlhye1wxJ2xY-17">
-          <mxCell edge="1" parent="D5UTqvl_Tlhye1wxJ2xY-1" source="D5UTqvl_Tlhye1wxJ2xY-4" style="endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" target="D5UTqvl_Tlhye1wxJ2xY-6">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1532" y="719" />
-              </Array>
-              <mxPoint x="1251" y="719" as="sourcePoint" />
-              <mxPoint x="1812" y="719" as="targetPoint" />
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-        <UserObject label="Listing &amp; Verification Saved" mermaidId="e:Database-&gt;System#0" mermaidBaseStyle="dashed=1;fixDash=1;dashPattern=3 3;endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;" mermaidBaseValue="Listing &amp; Verification Saved" id="D5UTqvl_Tlhye1wxJ2xY-18">
-          <mxCell edge="1" parent="D5UTqvl_Tlhye1wxJ2xY-1" source="D5UTqvl_Tlhye1wxJ2xY-6" style="dashed=1;fixDash=1;dashPattern=3 3;endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" target="D5UTqvl_Tlhye1wxJ2xY-4">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1532" y="765" />
-              </Array>
-              <mxPoint x="1812" y="765" as="sourcePoint" />
-              <mxPoint x="1251" y="765" as="targetPoint" />
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-        <UserObject label="Display Verified Badge &amp; Published Listing" mermaidId="e:System-&gt;Landlord#0" mermaidBaseStyle="dashed=1;fixDash=1;dashPattern=3 3;endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;" mermaidBaseValue="Display Verified Badge &amp; Published Listing" id="D5UTqvl_Tlhye1wxJ2xY-19">
-          <mxCell edge="1" parent="D5UTqvl_Tlhye1wxJ2xY-1" source="D5UTqvl_Tlhye1wxJ2xY-4" style="dashed=1;fixDash=1;dashPattern=3 3;endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" target="D5UTqvl_Tlhye1wxJ2xY-3">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1055" y="811" />
-              </Array>
-              <mxPoint x="1251" y="811" as="sourcePoint" />
-              <mxPoint x="859" y="811" as="targetPoint" />
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-        <UserObject label="Login &amp; Save Profile Preferences" mermaidId="e:Student-&gt;System#0" mermaidBaseStyle="endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;" mermaidBaseValue="Login &amp; Save Profile Preferences" id="D5UTqvl_Tlhye1wxJ2xY-20">
-          <mxCell edge="1" parent="D5UTqvl_Tlhye1wxJ2xY-1" source="D5UTqvl_Tlhye1wxJ2xY-2" style="endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" target="D5UTqvl_Tlhye1wxJ2xY-4">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="955" y="857" />
-              </Array>
-              <mxPoint x="659" y="857" as="sourcePoint" />
-              <mxPoint x="1251" y="857" as="targetPoint" />
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-        <UserObject label="Search &amp; Filter Housing" mermaidId="e:Student-&gt;System#1" mermaidBaseStyle="endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;" mermaidBaseValue="Search &amp; Filter Housing" id="D5UTqvl_Tlhye1wxJ2xY-21">
-          <mxCell edge="1" parent="D5UTqvl_Tlhye1wxJ2xY-1" source="D5UTqvl_Tlhye1wxJ2xY-2" style="endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" target="D5UTqvl_Tlhye1wxJ2xY-4">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="955" y="903" />
-              </Array>
-              <mxPoint x="659" y="903" as="sourcePoint" />
-              <mxPoint x="1251" y="903" as="targetPoint" />
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-        <UserObject label="Get Available Housing Listings" mermaidId="e:System-&gt;Database#1" mermaidBaseStyle="endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;" mermaidBaseValue="Get Available Housing Listings" id="D5UTqvl_Tlhye1wxJ2xY-22">
-          <mxCell edge="1" parent="D5UTqvl_Tlhye1wxJ2xY-1" source="D5UTqvl_Tlhye1wxJ2xY-4" style="endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" target="D5UTqvl_Tlhye1wxJ2xY-6">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1532" y="949" />
-              </Array>
-              <mxPoint x="1251" y="949" as="sourcePoint" />
-              <mxPoint x="1812" y="949" as="targetPoint" />
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-        <UserObject label="Housing Listings" mermaidId="e:Database-&gt;System#1" mermaidBaseStyle="dashed=1;fixDash=1;dashPattern=3 3;endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;" mermaidBaseValue="Housing Listings" id="D5UTqvl_Tlhye1wxJ2xY-23">
-          <mxCell edge="1" parent="D5UTqvl_Tlhye1wxJ2xY-1" source="D5UTqvl_Tlhye1wxJ2xY-6" style="dashed=1;fixDash=1;dashPattern=3 3;endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" target="D5UTqvl_Tlhye1wxJ2xY-4">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1532" y="995" />
-              </Array>
-              <mxPoint x="1812" y="995" as="sourcePoint" />
-              <mxPoint x="1251" y="995" as="targetPoint" />
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-        <UserObject label="Display Filtered Results" mermaidId="e:System-&gt;Student#0" mermaidBaseStyle="dashed=1;fixDash=1;dashPattern=3 3;endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;" mermaidBaseValue="Display Filtered Results" id="D5UTqvl_Tlhye1wxJ2xY-24">
-          <mxCell edge="1" parent="D5UTqvl_Tlhye1wxJ2xY-1" source="D5UTqvl_Tlhye1wxJ2xY-4" style="dashed=1;fixDash=1;dashPattern=3 3;endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" target="D5UTqvl_Tlhye1wxJ2xY-2">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="955" y="1041" />
-              </Array>
-              <mxPoint x="1251" y="1041" as="sourcePoint" />
-              <mxPoint x="659" y="1041" as="targetPoint" />
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-        <UserObject label="Request AI Recommendations / Ask AI Assistant" mermaidId="e:Student-&gt;System#2" mermaidBaseStyle="endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;" mermaidBaseValue="Request AI Recommendations / Ask AI Assistant" id="D5UTqvl_Tlhye1wxJ2xY-25">
-          <mxCell edge="1" parent="D5UTqvl_Tlhye1wxJ2xY-1" source="D5UTqvl_Tlhye1wxJ2xY-2" style="endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" target="D5UTqvl_Tlhye1wxJ2xY-4">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="955" y="1087" />
-              </Array>
-              <mxPoint x="659" y="1087" as="sourcePoint" />
-              <mxPoint x="1251" y="1087" as="targetPoint" />
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-        <UserObject label="Get Student Preferences &amp; Available Listings" mermaidId="e:System-&gt;Database#2" mermaidBaseStyle="endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;" mermaidBaseValue="Get Student Preferences &amp; Available Listings" id="D5UTqvl_Tlhye1wxJ2xY-26">
-          <mxCell edge="1" parent="D5UTqvl_Tlhye1wxJ2xY-1" source="D5UTqvl_Tlhye1wxJ2xY-4" style="endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" target="D5UTqvl_Tlhye1wxJ2xY-6">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1532" y="1133" />
-              </Array>
-              <mxPoint x="1251" y="1133" as="sourcePoint" />
-              <mxPoint x="1812" y="1133" as="targetPoint" />
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-        <UserObject label="Preferences &amp; Eligible Listings" mermaidId="e:Database-&gt;System#2" mermaidBaseStyle="dashed=1;fixDash=1;dashPattern=3 3;endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;" mermaidBaseValue="Preferences &amp; Eligible Listings" id="D5UTqvl_Tlhye1wxJ2xY-27">
-          <mxCell edge="1" parent="D5UTqvl_Tlhye1wxJ2xY-1" source="D5UTqvl_Tlhye1wxJ2xY-6" style="dashed=1;fixDash=1;dashPattern=3 3;endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" target="D5UTqvl_Tlhye1wxJ2xY-4">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1532" y="1179" />
-              </Array>
-              <mxPoint x="1812" y="1179" as="sourcePoint" />
-              <mxPoint x="1251" y="1179" as="targetPoint" />
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-        <UserObject label="Analyze Preferences &amp; Listings" mermaidId="e:System-&gt;AIEngine#0" mermaidBaseStyle="endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;" mermaidBaseValue="Analyze Preferences &amp; Listings" id="D5UTqvl_Tlhye1wxJ2xY-28">
-          <mxCell edge="1" parent="D5UTqvl_Tlhye1wxJ2xY-1" source="D5UTqvl_Tlhye1wxJ2xY-4" style="endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" target="D5UTqvl_Tlhye1wxJ2xY-5">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1432" y="1225" />
-              </Array>
-              <mxPoint x="1251" y="1225" as="sourcePoint" />
-              <mxPoint x="1612" y="1225" as="targetPoint" />
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-        <UserObject label="Ranked Recommendations + Match Explanation" mermaidId="e:AIEngine-&gt;System#0" mermaidBaseStyle="dashed=1;fixDash=1;dashPattern=3 3;endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;" mermaidBaseValue="Ranked Recommendations + Match Explanation" id="D5UTqvl_Tlhye1wxJ2xY-29">
-          <mxCell edge="1" parent="D5UTqvl_Tlhye1wxJ2xY-1" source="D5UTqvl_Tlhye1wxJ2xY-5" style="dashed=1;fixDash=1;dashPattern=3 3;endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" target="D5UTqvl_Tlhye1wxJ2xY-4">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1432" y="1271" />
-              </Array>
-              <mxPoint x="1612" y="1271" as="sourcePoint" />
-              <mxPoint x="1251" y="1271" as="targetPoint" />
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-        <UserObject label="Display AI Housing Results &amp; Explanations" mermaidId="e:System-&gt;Student#1" mermaidBaseStyle="dashed=1;fixDash=1;dashPattern=3 3;endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;" mermaidBaseValue="Display AI Housing Results &amp; Explanations" id="D5UTqvl_Tlhye1wxJ2xY-30">
-          <mxCell edge="1" parent="D5UTqvl_Tlhye1wxJ2xY-1" source="D5UTqvl_Tlhye1wxJ2xY-4" style="dashed=1;fixDash=1;dashPattern=3 3;endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" target="D5UTqvl_Tlhye1wxJ2xY-2">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="955" y="1317" />
-              </Array>
-              <mxPoint x="1251" y="1317" as="sourcePoint" />
-              <mxPoint x="659" y="1317" as="targetPoint" />
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-        <UserObject label="Select Housing (Room/Bed) &amp; Submit Booking" mermaidId="e:Student-&gt;System#3" mermaidBaseStyle="endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;" mermaidBaseValue="Select Housing (Room/Bed) &amp; Submit Booking" id="D5UTqvl_Tlhye1wxJ2xY-31">
-          <mxCell edge="1" parent="D5UTqvl_Tlhye1wxJ2xY-1" source="D5UTqvl_Tlhye1wxJ2xY-2" style="endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" target="D5UTqvl_Tlhye1wxJ2xY-4">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="955" y="1363" />
-              </Array>
-              <mxPoint x="659" y="1363" as="sourcePoint" />
-              <mxPoint x="1251" y="1363" as="targetPoint" />
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-        <UserObject label="Check Availability &amp; Active Booking Constraints" mermaidId="e:System-&gt;Database#3" mermaidBaseStyle="endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;" mermaidBaseValue="Check Availability &amp; Active Booking Constraints" id="D5UTqvl_Tlhye1wxJ2xY-32">
-          <mxCell edge="1" parent="D5UTqvl_Tlhye1wxJ2xY-1" source="D5UTqvl_Tlhye1wxJ2xY-4" style="endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" target="D5UTqvl_Tlhye1wxJ2xY-6">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1532" y="1409" />
-              </Array>
-              <mxPoint x="1251" y="1409" as="sourcePoint" />
-              <mxPoint x="1812" y="1409" as="targetPoint" />
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-        <UserObject label="Create Booking Request (Pending)" mermaidId="e:System-&gt;Database#4" mermaidBaseStyle="endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;" mermaidBaseValue="Create Booking Request (Pending)" id="D5UTqvl_Tlhye1wxJ2xY-33">
-          <mxCell edge="1" parent="D5UTqvl_Tlhye1wxJ2xY-1" source="D5UTqvl_Tlhye1wxJ2xY-4" style="endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" target="D5UTqvl_Tlhye1wxJ2xY-6">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1532" y="1500" />
-              </Array>
-              <mxPoint x="1251" y="1500" as="sourcePoint" />
-              <mxPoint x="1812" y="1500" as="targetPoint" />
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-        <UserObject label="Notify Landlord" mermaidId="e:System-&gt;NotificationService#0" mermaidBaseStyle="endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;" mermaidBaseValue="Notify Landlord" id="D5UTqvl_Tlhye1wxJ2xY-34">
-          <mxCell edge="1" parent="D5UTqvl_Tlhye1wxJ2xY-1" source="D5UTqvl_Tlhye1wxJ2xY-4" style="endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" target="D5UTqvl_Tlhye1wxJ2xY-7">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1632" y="1546" />
-              </Array>
-              <mxPoint x="1251" y="1546" as="sourcePoint" />
-              <mxPoint x="2012" y="1546" as="targetPoint" />
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-        <UserObject label="New Booking Request" mermaidId="e:NotificationService-&gt;Landlord#0" mermaidBaseStyle="dashed=1;fixDash=1;dashPattern=3 3;endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;" mermaidBaseValue="New Booking Request" id="D5UTqvl_Tlhye1wxJ2xY-35">
-          <mxCell edge="1" parent="D5UTqvl_Tlhye1wxJ2xY-1" source="D5UTqvl_Tlhye1wxJ2xY-7" style="dashed=1;fixDash=1;dashPattern=3 3;endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" target="D5UTqvl_Tlhye1wxJ2xY-3">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1436" y="1592" />
-              </Array>
-              <mxPoint x="2012" y="1592" as="sourcePoint" />
-              <mxPoint x="859" y="1592" as="targetPoint" />
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-        <UserObject label="Accept or Reject Request" mermaidId="e:Landlord-&gt;System#1" mermaidBaseStyle="endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;" mermaidBaseValue="Accept or Reject Request" id="D5UTqvl_Tlhye1wxJ2xY-36">
-          <mxCell edge="1" parent="D5UTqvl_Tlhye1wxJ2xY-1" source="D5UTqvl_Tlhye1wxJ2xY-3" style="endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" target="D5UTqvl_Tlhye1wxJ2xY-4">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1055" y="1638" />
-              </Array>
-              <mxPoint x="859" y="1638" as="sourcePoint" />
-              <mxPoint x="1251" y="1638" as="targetPoint" />
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-        <UserObject label="Update Status (Accepted) &amp; Available Places" mermaidId="e:System-&gt;Database#5" mermaidBaseStyle="endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;" mermaidBaseValue="Update Status (Accepted) &amp; Available Places" id="D5UTqvl_Tlhye1wxJ2xY-37">
-          <mxCell edge="1" parent="D5UTqvl_Tlhye1wxJ2xY-1" source="D5UTqvl_Tlhye1wxJ2xY-4" style="endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" target="D5UTqvl_Tlhye1wxJ2xY-6">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1532" y="1729" />
-              </Array>
-              <mxPoint x="1251" y="1729" as="sourcePoint" />
-              <mxPoint x="1812" y="1729" as="targetPoint" />
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-        <UserObject label="Notify Student to Complete Payment" mermaidId="e:System-&gt;NotificationService#1" mermaidBaseStyle="endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;" mermaidBaseValue="Notify Student to Complete Payment" id="D5UTqvl_Tlhye1wxJ2xY-38">
-          <mxCell edge="1" parent="D5UTqvl_Tlhye1wxJ2xY-1" source="D5UTqvl_Tlhye1wxJ2xY-4" style="endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" target="D5UTqvl_Tlhye1wxJ2xY-7">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1632" y="1775" />
-              </Array>
-              <mxPoint x="1251" y="1775" as="sourcePoint" />
-              <mxPoint x="2012" y="1775" as="targetPoint" />
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-        <UserObject label="Booking Accepted (Pending Payment)" mermaidId="e:NotificationService-&gt;Student#0" mermaidBaseStyle="dashed=1;fixDash=1;dashPattern=3 3;endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;" mermaidBaseValue="Booking Accepted (Pending Payment)" id="D5UTqvl_Tlhye1wxJ2xY-39">
-          <mxCell edge="1" parent="D5UTqvl_Tlhye1wxJ2xY-1" source="D5UTqvl_Tlhye1wxJ2xY-7" style="dashed=1;fixDash=1;dashPattern=3 3;endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" target="D5UTqvl_Tlhye1wxJ2xY-2">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1336" y="1821" />
-              </Array>
-              <mxPoint x="2012" y="1821" as="sourcePoint" />
-              <mxPoint x="659" y="1821" as="targetPoint" />
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-        <UserObject label="Complete Online Payment within Time Limit" mermaidId="e:Student-&gt;System#4" mermaidBaseStyle="endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;" mermaidBaseValue="Complete Online Payment within Time Limit" id="D5UTqvl_Tlhye1wxJ2xY-40">
-          <mxCell edge="1" parent="D5UTqvl_Tlhye1wxJ2xY-1" source="D5UTqvl_Tlhye1wxJ2xY-2" style="endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" target="D5UTqvl_Tlhye1wxJ2xY-4">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="955" y="1867" />
-              </Array>
-              <mxPoint x="659" y="1867" as="sourcePoint" />
-              <mxPoint x="1251" y="1867" as="targetPoint" />
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-        <UserObject label="Log Transaction &amp; Confirm Booking" mermaidId="e:System-&gt;Database#6" mermaidBaseStyle="endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;" mermaidBaseValue="Log Transaction &amp; Confirm Booking" id="D5UTqvl_Tlhye1wxJ2xY-41">
-          <mxCell edge="1" parent="D5UTqvl_Tlhye1wxJ2xY-1" source="D5UTqvl_Tlhye1wxJ2xY-4" style="endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" target="D5UTqvl_Tlhye1wxJ2xY-6">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1532" y="1913" />
-              </Array>
-              <mxPoint x="1251" y="1913" as="sourcePoint" />
-              <mxPoint x="1812" y="1913" as="targetPoint" />
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-        <UserObject label="Update Booking Status (Rejected)" mermaidId="e:System-&gt;Database#7" mermaidBaseStyle="endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;" mermaidBaseValue="Update Booking Status (Rejected)" id="D5UTqvl_Tlhye1wxJ2xY-42">
-          <mxCell edge="1" parent="D5UTqvl_Tlhye1wxJ2xY-1" source="D5UTqvl_Tlhye1wxJ2xY-4" style="endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" target="D5UTqvl_Tlhye1wxJ2xY-6">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1532" y="2004" />
-              </Array>
-              <mxPoint x="1251" y="2004" as="sourcePoint" />
-              <mxPoint x="1812" y="2004" as="targetPoint" />
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-        <UserObject label="Notify Student" mermaidId="e:System-&gt;NotificationService#2" mermaidBaseStyle="endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;" mermaidBaseValue="Notify Student" id="D5UTqvl_Tlhye1wxJ2xY-43">
-          <mxCell edge="1" parent="D5UTqvl_Tlhye1wxJ2xY-1" source="D5UTqvl_Tlhye1wxJ2xY-4" style="endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" target="D5UTqvl_Tlhye1wxJ2xY-7">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1632" y="2050" />
-              </Array>
-              <mxPoint x="1251" y="2050" as="sourcePoint" />
-              <mxPoint x="2012" y="2050" as="targetPoint" />
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-        <UserObject label="Booking Rejected" mermaidId="e:NotificationService-&gt;Student#1" mermaidBaseStyle="dashed=1;fixDash=1;dashPattern=3 3;endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;" mermaidBaseValue="Booking Rejected" id="D5UTqvl_Tlhye1wxJ2xY-44">
-          <mxCell edge="1" parent="D5UTqvl_Tlhye1wxJ2xY-1" source="D5UTqvl_Tlhye1wxJ2xY-7" style="dashed=1;fixDash=1;dashPattern=3 3;endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" target="D5UTqvl_Tlhye1wxJ2xY-2">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1336" y="2096" />
-              </Array>
-              <mxPoint x="2012" y="2096" as="sourcePoint" />
-              <mxPoint x="659" y="2096" as="targetPoint" />
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-        <UserObject label="Display Not Available" mermaidId="e:System-&gt;Student#2" mermaidBaseStyle="dashed=1;fixDash=1;dashPattern=3 3;endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;" mermaidBaseValue="Display Not Available" id="D5UTqvl_Tlhye1wxJ2xY-45">
-          <mxCell edge="1" parent="D5UTqvl_Tlhye1wxJ2xY-1" source="D5UTqvl_Tlhye1wxJ2xY-4" style="dashed=1;fixDash=1;dashPattern=3 3;endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" target="D5UTqvl_Tlhye1wxJ2xY-2">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="955" y="2197" />
-              </Array>
-              <mxPoint x="1251" y="2197" as="sourcePoint" />
-              <mxPoint x="659" y="2197" as="targetPoint" />
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-        <UserObject label="Submit Review and Star Rating" mermaidId="e:Student-&gt;System#5" mermaidBaseStyle="endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;" mermaidBaseValue="Submit Review and Star Rating" id="D5UTqvl_Tlhye1wxJ2xY-46">
-          <mxCell edge="1" parent="D5UTqvl_Tlhye1wxJ2xY-1" source="D5UTqvl_Tlhye1wxJ2xY-2" style="endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" target="D5UTqvl_Tlhye1wxJ2xY-4">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="955" y="2253" />
-              </Array>
-              <mxPoint x="659" y="2253" as="sourcePoint" />
-              <mxPoint x="1251" y="2253" as="targetPoint" />
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-        <UserObject label="Save Review and Update Average Rating" mermaidId="e:System-&gt;Database#8" mermaidBaseStyle="endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;" mermaidBaseValue="Save Review and Update Average Rating" id="D5UTqvl_Tlhye1wxJ2xY-47">
-          <mxCell edge="1" parent="D5UTqvl_Tlhye1wxJ2xY-1" source="D5UTqvl_Tlhye1wxJ2xY-4" style="endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" target="D5UTqvl_Tlhye1wxJ2xY-6">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1532" y="2299" />
-              </Array>
-              <mxPoint x="1251" y="2299" as="sourcePoint" />
-              <mxPoint x="1812" y="2299" as="targetPoint" />
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-        <UserObject label="Review Saved" mermaidId="e:Database-&gt;System#3" mermaidBaseStyle="dashed=1;fixDash=1;dashPattern=3 3;endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;" mermaidBaseValue="Review Saved" id="D5UTqvl_Tlhye1wxJ2xY-48">
-          <mxCell edge="1" parent="D5UTqvl_Tlhye1wxJ2xY-1" source="D5UTqvl_Tlhye1wxJ2xY-6" style="dashed=1;fixDash=1;dashPattern=3 3;endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" target="D5UTqvl_Tlhye1wxJ2xY-4">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1532" y="2345" />
-              </Array>
-              <mxPoint x="1812" y="2345" as="sourcePoint" />
-              <mxPoint x="1251" y="2345" as="targetPoint" />
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-        <UserObject label="Display Updated Rating" mermaidId="e:System-&gt;Student#3" mermaidBaseStyle="dashed=1;fixDash=1;dashPattern=3 3;endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;" mermaidBaseValue="Display Updated Rating" id="D5UTqvl_Tlhye1wxJ2xY-49">
-          <mxCell edge="1" parent="D5UTqvl_Tlhye1wxJ2xY-1" source="D5UTqvl_Tlhye1wxJ2xY-4" style="dashed=1;fixDash=1;dashPattern=3 3;endArrow=block;endSize=9;verticalAlign=bottom;spacingBottom=2;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#28253D;fontColor=#28253D;fontFamily=Recursive;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" target="D5UTqvl_Tlhye1wxJ2xY-2">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="955" y="2391" />
-              </Array>
-              <mxPoint x="1251" y="2391" as="sourcePoint" />
-              <mxPoint x="659" y="2391" as="targetPoint" />
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-143" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;strokeColor=#f59f00;fillColor=#121212;fontColor=#e0e0e0;strokeWidth=2;fontSize=12;fontStyle=1;" value="Admin" vertex="1">
+          <mxGeometry height="55" width="30" x="3078" y="2058" as="geometry" />
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-144" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;strokeColor=#f59f00;fillColor=#121212;fontColor=#e0e0e0;strokeWidth=2;fontSize=12;fontStyle=1;" value="Admin" vertex="1">
+          <mxGeometry height="55" width="30" x="3078" y="6538" as="geometry" />
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-145" edge="1" parent="1" style="endArrow=none;dashed=0;html=1;strokeColor=#888888;strokeWidth=1.5;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="3093" y="2133" as="sourcePoint" />
+            <mxPoint x="3093" y="6538" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-146" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#c96a3b;fillColor=#1a1a1a;fontColor=#e0e0e0;strokeWidth=2;fontSize=12;fontStyle=1;" value="System" vertex="1">
+          <mxGeometry height="45" width="130" x="3288" y="2068" as="geometry" />
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-147" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#c96a3b;fillColor=#1a1a1a;fontColor=#e0e0e0;strokeWidth=2;fontSize=12;fontStyle=1;" value="System" vertex="1">
+          <mxGeometry height="45" width="130" x="3288" y="6538" as="geometry" />
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-148" edge="1" parent="1" style="endArrow=none;dashed=0;html=1;strokeColor=#888888;strokeWidth=1.5;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="3353" y="2113" as="sourcePoint" />
+            <mxPoint x="3353" y="6538" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-149" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#1b9aaa;fillColor=#1a1a1a;fontColor=#e0e0e0;strokeWidth=2;fontSize=12;fontStyle=1;" value="AI Engine" vertex="1">
+          <mxGeometry height="45" width="130" x="3568" y="2068" as="geometry" />
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-150" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#1b9aaa;fillColor=#1a1a1a;fontColor=#e0e0e0;strokeWidth=2;fontSize=12;fontStyle=1;" value="AI Engine" vertex="1">
+          <mxGeometry height="45" width="130" x="3568" y="6538" as="geometry" />
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-151" edge="1" parent="1" style="endArrow=none;dashed=0;html=1;strokeColor=#888888;strokeWidth=1.5;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="3633" y="2113" as="sourcePoint" />
+            <mxPoint x="3633" y="6538" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-152" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#2e8b57;fillColor=#1a1a1a;fontColor=#e0e0e0;strokeWidth=2;fontSize=12;fontStyle=1;" value="Database" vertex="1">
+          <mxGeometry height="45" width="130" x="3838" y="2068" as="geometry" />
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-153" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#2e8b57;fillColor=#1a1a1a;fontColor=#e0e0e0;strokeWidth=2;fontSize=12;fontStyle=1;" value="Database" vertex="1">
+          <mxGeometry height="45" width="130" x="3838" y="6538" as="geometry" />
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-154" edge="1" parent="1" style="endArrow=none;dashed=0;html=1;strokeColor=#888888;strokeWidth=1.5;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="3903" y="2113" as="sourcePoint" />
+            <mxPoint x="3903" y="6538" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-155" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#7950f2;fillColor=#1a1a1a;fontColor=#e0e0e0;strokeWidth=2;fontSize=12;fontStyle=1;" value="Notification Service" vertex="1">
+          <mxGeometry height="45" width="130" x="4108" y="2068" as="geometry" />
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-156" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#7950f2;fillColor=#1a1a1a;fontColor=#e0e0e0;strokeWidth=2;fontSize=12;fontStyle=1;" value="Notification Service" vertex="1">
+          <mxGeometry height="45" width="130" x="4108" y="6538" as="geometry" />
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-157" edge="1" parent="1" style="endArrow=none;dashed=0;html=1;strokeColor=#888888;strokeWidth=1.5;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="4173" y="2113" as="sourcePoint" />
+            <mxPoint x="4173" y="6538" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-158" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#4caf50;fontColor=#ffffff;fontSize=12;fontStyle=1;align=left;spacingLeft=14;strokeWidth=1.5;" value="1. Landlord Registration, Admin Verification &amp; Housing Listing (FR-01..09, FR-30..34, FR-52, BR-01..15, NFR-01)" vertex="1">
+          <mxGeometry height="28" width="1620" x="2633" y="2148" as="geometry" />
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-159" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="1. Register (National ID [unique], Full Name, Phone, Profile Pic, National ID Photo [JPG/PNG], Password) (FR-01)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="2893" y="2208" as="sourcePoint" />
+            <mxPoint x="3353" y="2208" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-160" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="2. Validate (BR-01, BR-02), Hash Password &amp; Save Landlord (Status: Pending) (NFR-01)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="2253" as="sourcePoint" />
+            <mxPoint x="3903" y="2253" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-161" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="3. Login (Username, Password) &amp; Review Pending Landlord Info and National ID Photo (FR-34, FR-30)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3093" y="2298" as="sourcePoint" />
+            <mxPoint x="3353" y="2298" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-162" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="4. Fetch Pending Landlord Profile &amp; National ID Photo">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="2343" as="sourcePoint" />
+            <mxPoint x="3903" y="2343" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-163" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;strokeColor=#cfcfcf;fontColor=#e8e8e8;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="5. Pending Landlord Verification Details">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3903" y="2388" as="sourcePoint" />
+            <mxPoint x="3353" y="2388" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-164" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#aaaaaa;dashed=1;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="640" width="1590" x="2648" y="2418" as="geometry" />
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-165" parent="1" style="shape=card;whiteSpace=wrap;html=1;fillColor=#222222;strokeColor=#aaaaaa;fontColor=#ffffff;fontSize=11;fontStyle=1;direction=west;size=10;" value="alt" vertex="1">
+          <mxGeometry height="24" width="55" x="2648" y="2418" as="geometry" />
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-166" parent="1" style="text;html=1;strokeColor=none;fillColor=#121212;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#f8f9fa;fontSize=11;fontStyle=1;" value="[Admin Approves Landlord (FR-31, FR-32)]" vertex="1">
+          <mxGeometry height="22" width="420" x="2718" y="2422" as="geometry" />
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-167" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;strokeColor=#aaaaaa;strokeWidth=1.2;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="2648" y="2903" as="sourcePoint" />
+            <mxPoint x="4238" y="2903" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-168" parent="1" style="text;html=1;strokeColor=none;fillColor=#121212;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#f8f9fa;fontSize=11;fontStyle=1;" value="[Admin Rejects Landlord (FR-31, FR-33)]" vertex="1">
+          <mxGeometry height="22" width="450" x="2718" y="2907" as="geometry" />
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-169" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="6. Approve Landlord Account (FR-31)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3093" y="2463" as="sourcePoint" />
+            <mxPoint x="3353" y="2463" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-170" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="7. Update Verification Status (Approved) &amp; Enable Verified Label (FR-32)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="2508" as="sourcePoint" />
+            <mxPoint x="3903" y="2508" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-171" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;strokeColor=#cfcfcf;fontColor=#e8e8e8;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="8. Display Verified Label on Landlord Public Profile (FR-04, FR-32)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="2553" as="sourcePoint" />
+            <mxPoint x="2893" y="2553" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-172" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="9. Login &amp; Add Listing (Location, Monthly Price, Rooms, Room Capacity [1-3], Internet, Floor, Elevator, Photos, Transport) (FR-02, FR-03, FR-05)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="2893" y="2603" as="sourcePoint" />
+            <mxPoint x="3353" y="2603" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-173" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="10. Validate Listing Rules (BR-05..BR-14), Auto-Calculate Student Capacity &amp; Availability, Save Listing (FR-06, FR-07, FR-09)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="2648" as="sourcePoint" />
+            <mxPoint x="3903" y="2648" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-174" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;strokeColor=#cfcfcf;fontColor=#e8e8e8;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="11. Listing Saved &amp; Linked to Landlord Profile (FR-04)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3903" y="2693" as="sourcePoint" />
+            <mxPoint x="3353" y="2693" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-175" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;strokeColor=#cfcfcf;fontColor=#e8e8e8;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="12. Display Published Listing on Landlord Profile">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="2738" as="sourcePoint" />
+            <mxPoint x="2893" y="2738" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-176" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="13. Query Students with Matching Saved Preferences (FR-52)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="2783" as="sourcePoint" />
+            <mxPoint x="3903" y="2783" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-177" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;strokeColor=#cfcfcf;fontColor=#e8e8e8;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="14. Matching Students List">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3903" y="2828" as="sourcePoint" />
+            <mxPoint x="3353" y="2828" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-178" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="15. Trigger Real-Time New Match Notification (FR-52, FR-56)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="2863" as="sourcePoint" />
+            <mxPoint x="4173" y="2863" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-179" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;strokeColor=#cfcfcf;fontColor=#e8e8e8;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="16. Real-Time Alert: New Housing Listing Matches Your Preferences">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="4173" y="2888" as="sourcePoint" />
+            <mxPoint x="2693" y="2888" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-180" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="17. Reject Landlord Account (FR-31)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3093" y="2948" as="sourcePoint" />
+            <mxPoint x="3353" y="2948" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-181" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="18. Update Verification Status (Rejected) - No Resubmission, New Account Required (FR-33, BR-04)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="2993" as="sourcePoint" />
+            <mxPoint x="3903" y="2993" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-182" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;strokeColor=#cfcfcf;fontColor=#e8e8e8;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="19. Display Verification Rejected Notice">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="3038" as="sourcePoint" />
+            <mxPoint x="2893" y="3038" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-183" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#d63384;fontColor=#ffffff;fontSize=12;fontStyle=1;align=left;spacingLeft=14;strokeWidth=1.5;" value="2. Student Registration, Login &amp; Profile (FR-10..12, FR-16, BR-16..20)" vertex="1">
+          <mxGeometry height="28" width="1620" x="2633" y="3083" as="geometry" />
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-184" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="20. Register (Unique Email &amp; Phone, Birthdate [Age &gt; 18], Gender, University, College, Governorate, Password) (FR-10, BR-16, BR-17, BR-19)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="2693" y="3143" as="sourcePoint" />
+            <mxPoint x="3353" y="3143" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-185" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="21. Login &amp; Save/Update Profile (Budget [1-10,000 EGP], Room Type, Max Distance [KM], AI Prefs) (FR-11, FR-12, FR-16, BR-20)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="2693" y="3188" as="sourcePoint" />
+            <mxPoint x="3353" y="3188" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-186" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="22. Validate Student Rules (BR-16..BR-20) &amp; Save Profile">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="3233" as="sourcePoint" />
+            <mxPoint x="3903" y="3233" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-187" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;strokeColor=#cfcfcf;fontColor=#e8e8e8;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="23. Student Profile Saved">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3903" y="3278" as="sourcePoint" />
+            <mxPoint x="3353" y="3278" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-188" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;strokeColor=#cfcfcf;fontColor=#e8e8e8;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="24. Confirm Profile Updated">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="3323" as="sourcePoint" />
+            <mxPoint x="2693" y="3323" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-189" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#0ea5e9;fontColor=#ffffff;fontSize=12;fontStyle=1;align=left;spacingLeft=14;strokeWidth=1.5;" value="3. Search, Filter, Sort Housing &amp; View Details / Residents (FR-13, FR-14, FR-17..19, BR-21..23, NFR-02, NFR-06)" vertex="1">
+          <mxGeometry height="28" width="1620" x="2633" y="3358" as="geometry" />
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-190" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="25. Search, Filter &amp; Sort (Price [EGP], Distance [KM], Internet, Room Capacity, Transport, Available Places) (FR-17..19)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="2693" y="3418" as="sourcePoint" />
+            <mxPoint x="3353" y="3418" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-191" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="26. Query Listings, Photos, Resident Count &amp; Current Residents (FR-13, FR-14)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="3463" as="sourcePoint" />
+            <mxPoint x="3903" y="3463" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-192" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;strokeColor=#cfcfcf;fontColor=#e8e8e8;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="27. Matching Listings + Residents (Name, College, University, Governorate)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3903" y="3508" as="sourcePoint" />
+            <mxPoint x="3353" y="3508" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-193" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;strokeColor=#cfcfcf;fontColor=#e8e8e8;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="28. Display Listings, Photos, Resident Count &amp; Residents Info (FR-13, FR-14)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="3553" as="sourcePoint" />
+            <mxPoint x="2693" y="3553" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-194" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#1b9aaa;fontColor=#ffffff;fontSize=12;fontStyle=1;align=left;spacingLeft=14;strokeWidth=1.5;" value="4. AI Housing Recommendation Engine &amp; AI Natural-Language Assistant (FR-20..25, BR-24..27, NFR-07)" vertex="1">
+          <mxGeometry height="28" width="1620" x="2633" y="3588" as="geometry" />
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-195" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="29. Request AI Housing Recommendations">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="2693" y="3648" as="sourcePoint" />
+            <mxPoint x="3353" y="3648" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-196" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="30. Fetch Student Data &amp; Preferences + Available Listings (Exclude Unavailable / No Places - BR-24)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="3693" as="sourcePoint" />
+            <mxPoint x="3903" y="3693" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-197" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;strokeColor=#cfcfcf;fontColor=#e8e8e8;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="31. Student Data &amp; Eligible Listing Dataset">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3903" y="3738" as="sourcePoint" />
+            <mxPoint x="3353" y="3738" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-198" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="32. Evaluate Budget, Distance, Internet, Transport vs Listings - Recorded Data Only (FR-20, BR-25)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="3783" as="sourcePoint" />
+            <mxPoint x="3633" y="3783" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-199" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;strokeColor=#cfcfcf;fontColor=#e8e8e8;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="33. Ranked Recommendations + Natural-Language Explanations (FR-21, FR-22)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3633" y="3828" as="sourcePoint" />
+            <mxPoint x="3353" y="3828" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-200" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;strokeColor=#cfcfcf;fontColor=#e8e8e8;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="34. Display Ranked Options &amp; Explanations (FR-21, FR-22)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="3873" as="sourcePoint" />
+            <mxPoint x="2693" y="3873" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-201" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="35. Ask Natural-Language Question about Housing (AI Assistant - FR-23)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="2693" y="3928" as="sourcePoint" />
+            <mxPoint x="3353" y="3928" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-202" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="36. Process Query Against Stored Housing Data (Rent, Location, Facilities, Distance KM) (FR-24, BR-25)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="3973" as="sourcePoint" />
+            <mxPoint x="3633" y="3973" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-203" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;strokeColor=#cfcfcf;fontColor=#e8e8e8;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="37. Suggested Housing &amp; Answer from Stored Data Only (FR-24, FR-25, BR-25)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3633" y="4018" as="sourcePoint" />
+            <mxPoint x="3353" y="4018" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-204" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;strokeColor=#cfcfcf;fontColor=#e8e8e8;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="38. Display AI Assistant Answer &amp; Suggested Housing Details">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="4063" as="sourcePoint" />
+            <mxPoint x="2693" y="4063" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-205" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#f59f00;fontColor=#ffffff;fontSize=12;fontStyle=1;align=left;spacingLeft=14;strokeWidth=1.5;" value="5. Booking Request, Availability Check, Simulated Payment (48-Hour Limit), Expiry &amp; Cancellations (FR-35..49, BR-28..41, NFR-04)" vertex="1">
+          <mxGeometry height="28" width="1620" x="2633" y="4103" as="geometry" />
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-206" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="39. Select Housing Unit, Start Date &amp; Duration (Whole Months, 1-9) (FR-35, BR-28)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="2693" y="4163" as="sourcePoint" />
+            <mxPoint x="3353" y="4163" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-207" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="40. Strict Check: Place Availability &amp; Max 1 Active Booking per Student (FR-36, FR-38, FR-47, BR-29, NFR-04)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="4208" as="sourcePoint" />
+            <mxPoint x="3903" y="4208" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-208" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;strokeColor=#cfcfcf;fontColor=#e8e8e8;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="41. Availability &amp; Active Booking Check Result">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3903" y="4253" as="sourcePoint" />
+            <mxPoint x="3353" y="4253" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-209" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#cccccc;dashed=1;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="1595" width="1610" x="2638" y="4283" as="geometry" />
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-210" parent="1" style="shape=card;whiteSpace=wrap;html=1;fillColor=#222222;strokeColor=#cccccc;fontColor=#ffffff;fontSize=11;fontStyle=1;direction=west;size=10;" value="alt" vertex="1">
+          <mxGeometry height="24" width="55" x="2638" y="4283" as="geometry" />
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-211" parent="1" style="text;html=1;strokeColor=none;fillColor=#121212;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#f8f9fa;fontSize=11;fontStyle=1;" value="[Place Available &amp; Student Has No Active Booking (FR-36, BR-29)]" vertex="1">
+          <mxGeometry height="22" width="420" x="2708" y="4287" as="geometry" />
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-212" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;strokeColor=#cccccc;strokeWidth=1.2;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="2638" y="5793" as="sourcePoint" />
+            <mxPoint x="4248" y="5793" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-213" parent="1" style="text;html=1;strokeColor=none;fillColor=#121212;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#f8f9fa;fontSize=11;fontStyle=1;" value="[Place Unavailable, Reserved or Student Already Holds an Active Booking (FR-38, BR-29)]" vertex="1">
+          <mxGeometry height="22" width="450" x="2708" y="5797" as="geometry" />
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-214" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="42. Create Booking (Status: Pending) &amp; Reserve Place Immediately (FR-37, BR-30)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="4333" as="sourcePoint" />
+            <mxPoint x="3903" y="4333" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-215" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="43. Notify Landlord of New Booking Request (FR-50)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="4378" as="sourcePoint" />
+            <mxPoint x="4173" y="4378" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-216" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;strokeColor=#cfcfcf;fontColor=#e8e8e8;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="44. Real-Time Notification: New Student Booking Request (FR-56)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="4173" y="4423" as="sourcePoint" />
+            <mxPoint x="2893" y="4423" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-217" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="45. Review Booking Requests &amp; Accept or Reject (No Response Deadline) (FR-39, BR-31)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="2893" y="4468" as="sourcePoint" />
+            <mxPoint x="3353" y="4468" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-218" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#999999;dashed=1;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="1275" width="1570" x="2658" y="4498" as="geometry" />
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-219" parent="1" style="shape=card;whiteSpace=wrap;html=1;fillColor=#222222;strokeColor=#999999;fontColor=#ffffff;fontSize=11;fontStyle=1;direction=west;size=10;" value="alt" vertex="1">
+          <mxGeometry height="24" width="55" x="2658" y="4498" as="geometry" />
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-220" parent="1" style="text;html=1;strokeColor=none;fillColor=#121212;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#f8f9fa;fontSize=11;fontStyle=1;" value="[Landlord Accepts Booking Request (FR-39, FR-41)]" vertex="1">
+          <mxGeometry height="22" width="420" x="2728" y="4502" as="geometry" />
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-221" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;strokeWidth=1.2;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="2658" y="5613" as="sourcePoint" />
+            <mxPoint x="4228" y="5613" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-222" parent="1" style="text;html=1;strokeColor=none;fillColor=#121212;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#f8f9fa;fontSize=11;fontStyle=1;" value="[Landlord Rejects Booking Request (FR-39, FR-40)]" vertex="1">
+          <mxGeometry height="22" width="450" x="2728" y="5617" as="geometry" />
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-223" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="46. Update Booking Status (Accepted) &amp; Start 48-Hour Payment Period (Place Stays Reserved) (FR-41, BR-33)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="4548" as="sourcePoint" />
+            <mxPoint x="3903" y="4548" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-224" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="47. Notify Student of Acceptance &amp; 48-Hour Payment Deadline (FR-51)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="4593" as="sourcePoint" />
+            <mxPoint x="4173" y="4593" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-225" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;strokeColor=#cfcfcf;fontColor=#e8e8e8;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="48. Real-Time Notification: Booking Accepted - Complete Simulated Payment Within 48 Hours">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="4173" y="4638" as="sourcePoint" />
+            <mxPoint x="2693" y="4638" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-226" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#777777;dashed=1;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="920" width="1530" x="2678" y="4673" as="geometry" />
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-227" parent="1" style="shape=card;whiteSpace=wrap;html=1;fillColor=#222222;strokeColor=#777777;fontColor=#ffffff;fontSize=11;fontStyle=1;direction=west;size=10;" value="alt" vertex="1">
+          <mxGeometry height="24" width="55" x="2678" y="4673" as="geometry" />
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-228" parent="1" style="text;html=1;strokeColor=none;fillColor=#121212;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#f8f9fa;fontSize=11;fontStyle=1;" value="[Simulated Payment Succeeds Within 48 Hours (FR-42, BR-35)]" vertex="1">
+          <mxGeometry height="22" width="420" x="2748" y="4677" as="geometry" />
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-229" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;strokeColor=#777777;strokeWidth=1.2;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="2678" y="5203" as="sourcePoint" />
+            <mxPoint x="4208" y="5203" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-230" parent="1" style="text;html=1;strokeColor=none;fillColor=#121212;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#f8f9fa;fontSize=11;fontStyle=1;" value="[Simulated Payment Fails - Booking Stays Accepted Until the 48-Hour Deadline (BR-36)]" vertex="1">
+          <mxGeometry height="22" width="450" x="2748" y="5207" as="geometry" />
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-231" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;strokeColor=#777777;strokeWidth=1.2;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="2678" y="5393" as="sourcePoint" />
+            <mxPoint x="4208" y="5393" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-232" parent="1" style="text;html=1;strokeColor=none;fillColor=#121212;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#f8f9fa;fontSize=11;fontStyle=1;" value="[48-Hour Payment Period Expired Without Successful Payment (FR-43, BR-34)]" vertex="1">
+          <mxGeometry height="22" width="450" x="2748" y="5397" as="geometry" />
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-233" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="49. Complete Simulated Payment Within 48 Hours (FR-42, BR-33, BR-36)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="2693" y="4723" as="sourcePoint" />
+            <mxPoint x="3353" y="4723" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-234" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="50. Log Simulated Transaction (ID, Amount, Date, Status) &amp; Confirm Booking (FR-42, FR-44, BR-35)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="4768" as="sourcePoint" />
+            <mxPoint x="3903" y="4768" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-235" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;strokeColor=#cfcfcf;fontColor=#e8e8e8;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="51. Display Status: Confirmed (Auto-Changes to Completed When Rental Period Ends - FR-49)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="4813" as="sourcePoint" />
+            <mxPoint x="2693" y="4813" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-236" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#666666;dashed=1;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="340" width="1490" x="2698" y="4843" as="geometry" />
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-237" parent="1" style="shape=card;whiteSpace=wrap;html=1;fillColor=#222222;strokeColor=#666666;fontColor=#ffffff;fontSize=11;fontStyle=1;direction=west;size=10;" value="opt" vertex="1">
+          <mxGeometry height="24" width="55" x="2698" y="4843" as="geometry" />
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-238" parent="1" style="text;html=1;strokeColor=none;fillColor=#121212;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#f8f9fa;fontSize=11;fontStyle=1;" value="[Booking Cancelled by Student or Landlord (FR-45, FR-46, BR-37..40)]" vertex="1">
+          <mxGeometry height="22" width="420" x="2768" y="4847" as="geometry" />
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-239" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;strokeColor=#666666;strokeWidth=1.2;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="2698" y="5003" as="sourcePoint" />
+            <mxPoint x="4188" y="5003" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-240" parent="1" style="text;html=1;strokeColor=none;fillColor=#121212;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#f8f9fa;fontSize=11;fontStyle=1;" value="[Landlord Cancels Booking (incl. Confirmed) -&gt; Full Refund if Paid (FR-46, BR-39)]" vertex="1">
+          <mxGeometry height="22" width="450" x="2768" y="5007" as="geometry" />
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-241" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="52. [Student Cancels] Cancel Booking at Any Time (FR-45)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="2693" y="4893" as="sourcePoint" />
+            <mxPoint x="3353" y="4893" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-242" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="53. Update Status (Cancelled), Release Place; Simulate Full Refund if Paid &amp; Before Start, None After Start (BR-37, BR-38)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="4938" as="sourcePoint" />
+            <mxPoint x="3903" y="4938" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-243" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;strokeColor=#cfcfcf;fontColor=#e8e8e8;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="54. Display Booking Cancelled Status">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="4978" as="sourcePoint" />
+            <mxPoint x="2693" y="4978" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-244" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="55. [Landlord Cancels] Cancel Booking, incl. Confirmed (FR-46)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="2893" y="5048" as="sourcePoint" />
+            <mxPoint x="3353" y="5048" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-245" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="56. Update Status (Cancelled), Release Place &amp; Simulate Full Refund if Paid (FR-46, BR-39, BR-40)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="5093" as="sourcePoint" />
+            <mxPoint x="3903" y="5093" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-246" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="57. Notify Student of Landlord Cancellation &amp; Refund">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="5133" as="sourcePoint" />
+            <mxPoint x="4173" y="5133" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-247" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;strokeColor=#cfcfcf;fontColor=#e8e8e8;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="58. Real-Time Notification: Booking Cancelled by Landlord + Full Refund Simulated">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="4173" y="5168" as="sourcePoint" />
+            <mxPoint x="2693" y="5168" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-248" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="59. Attempt Simulated Payment (Result: Failed)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="2693" y="5253" as="sourcePoint" />
+            <mxPoint x="3353" y="5253" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-249" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="60. Log Failed Transaction &amp; Keep Booking &#39;Accepted&#39; (FR-44)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="5298" as="sourcePoint" />
+            <mxPoint x="3903" y="5298" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-250" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;strokeColor=#cfcfcf;fontColor=#e8e8e8;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="61. Display Payment Failed - Booking Remains Accepted Until the 48-Hour Deadline">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="5348" as="sourcePoint" />
+            <mxPoint x="2693" y="5348" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-251" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="62. [48 Hours Elapsed] Set Status: Expired &amp; Release Reserved Place (FR-43, BR-34, BR-40)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="5443" as="sourcePoint" />
+            <mxPoint x="3903" y="5443" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-252" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="63. Notify Student of Reservation Expiry">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="5498" as="sourcePoint" />
+            <mxPoint x="4173" y="5498" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-253" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;strokeColor=#cfcfcf;fontColor=#e8e8e8;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="64. Real-Time Notification: Booking Expired - 48-Hour Payment Period Ended">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="4173" y="5553" as="sourcePoint" />
+            <mxPoint x="2693" y="5553" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-254" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="65. Update Booking Status (Rejected) &amp; Release Reserved Place (FR-40, BR-32)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="5658" as="sourcePoint" />
+            <mxPoint x="3903" y="5658" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-255" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="66. Notify Student of Booking Rejection (FR-51)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="5708" as="sourcePoint" />
+            <mxPoint x="4173" y="5708" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-256" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;strokeColor=#cfcfcf;fontColor=#e8e8e8;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="67. Real-Time Notification: Booking Rejected">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="4173" y="5758" as="sourcePoint" />
+            <mxPoint x="2693" y="5758" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-257" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;strokeColor=#cfcfcf;fontColor=#e8e8e8;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="68. Block Booking Request &amp; Display Place Unavailable / Active Booking Limit Error (FR-38, BR-29)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="5843" as="sourcePoint" />
+            <mxPoint x="2693" y="5843" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-258" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#7950f2;fontColor=#ffffff;fontSize=12;fontStyle=1;align=left;spacingLeft=14;strokeWidth=1.5;" value="6. Real-Time Notification Center Management (FR-53..56, BR-46, NFR-08)" vertex="1">
+          <mxGeometry height="28" width="1620" x="2633" y="5903" as="geometry" />
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-259" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="69. View Notifications (Latest 5 on Main Page / All on Notifications Page; Title, Message, Date, Unread Count) (FR-53, FR-54, BR-46)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="2693" y="5963" as="sourcePoint" />
+            <mxPoint x="3353" y="5963" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-260" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="70. Mark Individual Notification as Read / Mark All as Read / Delete Notification (FR-55)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="2693" y="6008" as="sourcePoint" />
+            <mxPoint x="3353" y="6008" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-261" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="71. Update Notification State (Read / Deleted) &amp; Recalculate Unread Counter (FR-54)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="6053" as="sourcePoint" />
+            <mxPoint x="3903" y="6053" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-262" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;strokeColor=#cfcfcf;fontColor=#e8e8e8;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="72. Updated Notification List &amp; Unread Count">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3903" y="6098" as="sourcePoint" />
+            <mxPoint x="3353" y="6098" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-263" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;strokeColor=#cfcfcf;fontColor=#e8e8e8;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="73. Display Updated Notifications &amp; Unread Counter">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="6143" as="sourcePoint" />
+            <mxPoint x="2693" y="6143" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-264" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#10b981;fontColor=#ffffff;fontSize=12;fontStyle=1;align=left;spacingLeft=14;strokeWidth=1.5;" value="7. Ratings After Completed Stay: Housing, Landlord, Student &amp; Roommates (FR-26..29, BR-42..45)" vertex="1">
+          <mxGeometry height="28" width="1620" x="2633" y="6178" as="geometry" />
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-265" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="74. Submit Rating (1-5 Stars, Optional Comment) for Housing &amp; Landlord After Completed Stay (FR-26, BR-42..44)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="2693" y="6238" as="sourcePoint" />
+            <mxPoint x="3353" y="6238" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-266" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="75. Validate One Rating per Target per Stay, Save Review &amp; Recalculate Average Housing &amp; Landlord Rating (FR-27, BR-45)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="6283" as="sourcePoint" />
+            <mxPoint x="3903" y="6283" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-267" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;strokeColor=#cfcfcf;fontColor=#e8e8e8;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="76. Updated Average Ratings Saved">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3903" y="6323" as="sourcePoint" />
+            <mxPoint x="3353" y="6323" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-268" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;strokeColor=#cfcfcf;fontColor=#e8e8e8;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="77. Display Updated Average Rating on Housing Listing &amp; Landlord Profile (FR-04, FR-27)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="6363" as="sourcePoint" />
+            <mxPoint x="2693" y="6363" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-269" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="78. Submit Rating (1-5 Stars, Optional Comment) for Students Who Shared the House (FR-29, BR-45)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="2693" y="6408" as="sourcePoint" />
+            <mxPoint x="3353" y="6408" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-270" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="79. Validate Completed Stay &amp; Save Roommate Rating (BR-44, BR-45)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="6448" as="sourcePoint" />
+            <mxPoint x="3903" y="6448" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-271" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="80. Submit Rating (1-5 Stars) for Student After Completed Stay (FR-28)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="2893" y="6488" as="sourcePoint" />
+            <mxPoint x="3353" y="6488" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQgdA-rsSVFerAGcApTa-272" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;dashed=0;strokeColor=#ffffff;fontColor=#ffffff;fontSize=11;labelBackgroundColor=#121212;strokeWidth=1.5;" value="81. Validate &amp; Save Student Rating (BR-45)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint y="-4" as="offset" />
+            <mxPoint x="3353" y="6523" as="sourcePoint" />
+            <mxPoint x="3903" y="6523" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
