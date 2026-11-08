@@ -6,13 +6,14 @@
 
 - **Project Type:** University Graduation Project
 - **University:** Egyptian E-Learning University (EELU)
-- **Team Size:** 9 Students
+- **Team Size:** 10 Students
 - **Project Scope:** Full-Stack Web Development + Artificial Intelligence (AI)
 
 ### 1.2. Important Links
 
 - Github Video: [Video](https://www.youtube.com/watch?v=fDkR0TDR9dI)
 - FR & NFR & BR Word Shared File: [Word File](https://studenteeluedu-my.sharepoint.com/personal/2302601_student_eelu_edu_eg/_layouts/15/guestaccess.aspx?share=IQBYWVzk5qGlT5J-HSuf0nycAah8kOVgN3lnYcetOHUMPTg&e=l0IhZd)
+- Figma (UI/UX) Link: [Figma](https://www.figma.com/design/Tqh8Ba0jjLEz4WmNgodvnm/Untitled?node-id=3-2)
 
 
 ## 2. About the Project
@@ -34,7 +35,7 @@ The main goal is to build a **full-featured website** that combines modern front
 | 07 | **Hager Khaled Mohamed Mubarak** 💡 | `2301782` | **Frontend** |
 | 08 | **George Rashad Fayez Mikhail** | `2303065` | **Frontend + UI/UX** |
 | 09 | **Gamal Maher Karten Abdelsayed** | `2303007` | **Backend** |
-| 10 | **Salma Ibrahim Hagag Mohamed** | `2302827` | **Frontend** |
+| 10 | **Salma Ibrahim Hagag Mohamed** | `2302827` | **Frontend + UI/UX** |
 
 ## Role Legend
 
