@@ -15,6 +15,42 @@
 - FR & NFR & BR Word Shared File: [Word File](https://studenteeluedu-my.sharepoint.com/personal/2302601_student_eelu_edu_eg/_layouts/15/guestaccess.aspx?share=IQBYWVzk5qGlT5J-HSuf0nycAah8kOVgN3lnYcetOHUMPTg&e=l0IhZd)
 - Figma (UI/UX) Link: [Figma](https://www.figma.com/design/Tqh8Ba0jjLEz4WmNgodvnm/Untitled?node-id=3-2)
 
+### 1.3. FrontEnd Pages
+
+
+-3 Login Pages **(Ali Osama)**
+
+-2 Register Pages **(Ali Osama)**
+
+-Home **(Salma Ibrahim)**
+
+-Explore **(Salma Ibrahim)**
+
+-3 Profiles Pages **(Hager Khaled)**
+
+-2 Edit Profiles Pages  **(Ahmed Nasser)**
+
+-Booking Student **(Mostafa Ibrahim)**
+
+-Booking Status Student **(Mostafa Ibrahim)**
+
+-About **(Nourhan Mahmoud)**
+
+-Details **(Nourhan Mahmoud)**
+
+-Add property landlord **(Mohamed Adly)**
+
+-Notifiaction **(Mahmoud Osama)**
+
+-Forget Password **(Mahmoud Osama)**
+
+-Verfication Code
+
+-Set new password
+
+-Booking reqeusts landlord 
+
+-Status Landlord
 
 ## 2. About the Project
 
