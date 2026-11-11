@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakanak - Register</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/register/style.css">
+</head>
+<body class="custom-body min-h-screen flex flex-col justify-between">
+
+    <header class="site-header">
+        <a href="../../../../index.html" class="custom-logo">
+            <img class="custom-logo-icon" src="../../assets/images/logo.png" alt="Sakanak Logo">
+            <span class="sak">Sak<span class="anak">anak</span></span>
+        </a>
+        <a href="../login/login.html" class="custom-back-link">← Login</a>
+    </header>
+
+    <main class="main-card">
+        <div class="card-heading">
+            <a href="../../../../index.html" class="back-link" aria-label="Back to home">
+                <svg class="back-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+            </a>
+            <div>
+                <h1 id="form-title">Create Account</h1>
+                <p class="subtitle">Create a new account to start using the platform</p>
+            </div>
+        </div>
+
+        <div class="role-tabs">
+            <button type="button" id="tab-landlord" class="role-tab">Landlord Account 🔑</button>
+            <button type="button" id="tab-student" class="role-tab active">Student Account 🎓</button>
+        </div>
+
+        <form id="student-form" class="signup-form">
+            <div class="field">
+                <label for="student-name">Full Name</label>
+                <div class="input-wrap">
+                    <span class="input-icon">👤</span>
+                    <input id="student-name" type="text" placeholder="Enter your full name" required>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="student-email">Email Address</label>
+                <div class="input-wrap">
+                    <span class="input-icon">✉️</span>
+                    <input id="student-email" type="email" placeholder="student@email.com" required>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="student-phone">Phone Number</label>
+                <div class="input-wrap">
+                    <span class="input-icon">📞</span>
+                    <input id="student-phone" type="tel" placeholder="+20 100 000 0000" required>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="student-dob">Date of Birth</label>
+                <div class="input-wrap">
+                    <span class="input-icon">📅</span>
+                    <input id="student-dob" type="date" required>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="student-university">University</label>
+                <div class="input-wrap">
+                    <span class="input-icon">🏛️</span>
+                    <input id="student-university" type="text" placeholder="Enter your university" required>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="student-college">Faculty</label>
+                <div class="input-wrap">
+                    <span class="input-icon">🎓</span>
+                    <input id="student-college" type="text" placeholder="Enter your faculty" required>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="student-governorate">Governorate</label>
+                <div class="input-wrap">
+                    <span class="input-icon">📍</span>
+                    <input id="student-governorate" type="text" placeholder="Enter your governorate" required>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="student-password">Password</label>
+                <div class="input-wrap">
+                    <span class="input-icon">🔒</span>
+                    <input id="student-password" type="password" placeholder="Create a password" required>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="student-confirm-password">Confirm Password</label>
+                <div class="input-wrap">
+                    <span class="input-icon">🔒</span>
+                    <input id="student-confirm-password" type="password" placeholder="Enter the password again" required>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-button">Sign Up</button>
+            <p class="login-prompt">Already have an account? <a href="../login/login.html">Login</a></p>
+        </form>
+
+        <form id="landlord-form" class="signup-form hidden">
+            <div class="notice">
+                ⚠️ Landlord accounts require a National ID photo and a profile photo for admin review and approval.
+            </div>
+
+            <div class="field">
+                <label for="landlord-name">Full Name</label>
+                <div class="input-wrap">
+                    <span class="input-icon">👤</span>
+                    <input id="landlord-name" type="text" placeholder="Enter your full name" required>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="landlord-national-id">National ID (14 digits)</label>
+                <div class="input-wrap">
+                    <span class="input-icon">🪪</span>
+                    <input id="landlord-national-id" type="text" inputmode="numeric" maxlength="14" pattern="[0-9]{14}" placeholder="Enter your National ID" required>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="landlord-phone">Phone Number</label>
+                <div class="input-wrap">
+                    <span class="input-icon">📞</span>
+                    <input id="landlord-phone" type="tel" placeholder="+20 111 000 0000" required>
+                </div>
+            </div>
+
+            <div class="upload-grid sm:grid-cols-2">
+                <div class="field">
+                    <label for="landlord-profile-photo">Profile Photo (JPG/PNG)</label>
+                    <input id="landlord-profile-photo" class="file-input" type="file" accept="image/png,image/jpeg" required>
+                </div>
+                <div class="field">
+                    <label for="landlord-id-photo">National ID Photo (JPG/PNG)</label>
+                    <input id="landlord-id-photo" class="file-input" type="file" accept="image/png,image/jpeg" required>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="landlord-password">Password</label>
+                <div class="input-wrap">
+                    <span class="input-icon">🔒</span>
+                    <input id="landlord-password" type="password" placeholder="Create a password" required>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="landlord-confirm-password">Confirm Password</label>
+                <div class="input-wrap">
+                    <span class="input-icon">🔒</span>
+                    <input id="landlord-confirm-password" type="password" placeholder="Enter the password again" required>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-button">Submit for Verification</button>
+            <p class="login-prompt">Already have an account? <a href="../login/login.html">Login</a></p>
+        </form>
+    </main>
+
+    <footer class="site-footer">
+        © 2026 Sakanak - All Rights Reserved
+    </footer>
+
+    <script src="../../js/register/main.js"></script>
+</body>
+</html>
