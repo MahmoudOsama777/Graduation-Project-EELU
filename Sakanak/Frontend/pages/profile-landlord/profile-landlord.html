@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landlord Profile | Sakanak</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/profile/profile-landlord.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-left">
+      <a href="#" class="logout-link">Log out</a>
+      <button class="icon-btn" type="button" aria-label="Notifications">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#475569" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/>
+          <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+        </svg>
+        <span class="notif-dot"></span>
+      </button>
+    </div>
+
+    <nav class="header-nav">
+      <a href="#" class="nav-link">About</a>
+      <a href="#" class="nav-link active">Booking Requests</a>
+      <a href="#" class="nav-link">Explore</a>
+      <a href="../../index.html" class="nav-link">Home</a>
+    </nav>
+
+    <div class="header-right">
+      <a href="../../index.html" class="img-logo">
+        <img src="../../assets/images/logo.png" alt="Sakanak logo">
+        <h2><span><strong>S</strong></span>akanak</h2>
+      </a>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="card profile-card">
+      <div class="profile-actions">
+        <button class="btn-primary" type="button">Add property</button>
+        <button class="btn-edit" type="button">Edit Profile</button>
+      </div>
+
+      <div class="profile-info">
+        <div class="name-row">
+          <span class="verified-badge">Verified</span>
+          <h1 class="profile-name">Mahmoud El Sayed Hassan</h1>
+        </div>
+        <p class="profile-subtitle">Property owner • National ID: 2990101XXXXXXXX</p>
+        <div class="meta-row">
+          <span class="meta-item">Phone: 01112345678</span>
+          <span class="meta-item">Average rating: 4.8 / 5.0 (14 reviews)</span>
+        </div>
+      </div>
+
+      <div class="avatar">
+        <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="8" cy="15" r="4"/>
+          <path d="M10.85 12.15 19 4"/>
+          <path d="M18 5l3 3"/>
+          <path d="M15 8l3 3"/>
+        </svg>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-head">
+        <span class="pending-pill">1 pending request</span>
+        <h2 class="card-title">New booking requests</h2>
+        <span class="icon-badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#64748B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="5" width="18" height="14" rx="2"/>
+            <path d="M3 7l9 6 9-6"/>
+          </svg>
+        </span>
+      </div>
+
+      <div class="request-list" id="requestList"></div>
+    </section>
+
+    <section class="card">
+      <h2 class="section-title">My listed properties</h2>
+      <div class="property-list" id="propertyList"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-col">
+        <h5>SAFETY & VERIFICATION</h5>
+        <p>All housing owners are verified through national ID checks by our team to ensure a safe student community.</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>YOUR ACCOUNT</h5>
+        <a href="#">Log in</a>
+        <a href="#">Create account</a>
+        <a href="#">Landlord profile</a>
+      </div>
+
+      <div class="footer-col">
+        <h5>QUICK LINKS</h5>
+        <a href="../../index.html">Home</a>
+        <a href="#">Explore housing</a>
+        <a href="#">About us</a>
+      </div>
+
+      <div class="footer-col footer-brand-col">
+        <div class="footer-brand">
+          <span class="footer-name">Sakanak</span>
+          <img src="../../assets/images/logo.png" alt="Sakanak logo" class="footer-logo">
+        </div>
+        <p>A platform connecting students away from home with verified housing owners, safely and easily with AI.</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-links">
+        <a href="#">Support</a>
+        <a href="#">Terms of use</a>
+        <a href="#">Privacy policy</a>
+      </div>
+      <p>© 2026 Sakanak — All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../../js/profile/profile-landlord.js"></script>
+</body>
+</html>

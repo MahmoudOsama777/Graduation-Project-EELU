@@ -1,0 +1,471 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background: #F8FAFC;
+  color: #0F172A;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 120px;
+  background: #ffffff;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.header-nav {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #475569;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.nav-link.active {
+  color: #4F46E5;
+  font-weight: 600;
+}
+
+.logout-link {
+  text-decoration: none;
+  color: #1E293B;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.img-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #0F172A;
+}
+
+.img-logo img,
+.footer-logo {
+  height: 56px;
+  width: auto;
+  background: #4F46E5;
+  border-radius: 14px;
+  padding: 6px;
+  box-sizing: border-box;
+}
+
+.img-logo h2 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 600;
+  color: #0F172A;
+}
+
+.img-logo h2 strong {
+  color: #4F46E5;
+  font-weight: 700;
+}
+
+.main-content {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 48px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+  border: 1px solid #F1F5F9;
+}
+
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  flex: 1;
+}
+
+.card-subtitle {
+  color: #64748B;
+  font-size: 15px;
+  margin: 8px 0 20px;
+}
+
+.icon-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+}
+
+.profile-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 40px;
+}
+
+.btn-edit {
+  background: #EEF2FF;
+  color: #4F46E5;
+  border: none;
+  border-radius: 14px;
+  padding: 14px 22px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-edit:hover {
+  background: #E0E7FF;
+}
+
+.profile-info {
+  text-align: right;
+  flex: 1;
+}
+
+.profile-name {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 700;
+  color: #0F172A;
+}
+
+.profile-subtitle {
+  margin: 6px 0 16px;
+  color: #64748B;
+  font-size: 17px;
+}
+
+.chips {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: #F1F5F9;
+  color: #334155;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.chip-small {
+  font-size: 12px;
+}
+
+.chip-age {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.chip-gov {
+  background: #EEF2FF;
+  color: #4F46E5;
+  font-size: 13px;
+}
+
+.avatar {
+  width: 128px;
+  height: 128px;
+  border-radius: 24px;
+  background: #E0E7FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.grid-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.booking-box {
+  margin-top: 24px;
+  background: #ECFDF5;
+  border: 1px solid #A7F3D0;
+  border-radius: 18px;
+  padding: 24px;
+}
+
+.status-badge {
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  background: #10B981;
+  color: #ffffff;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+}
+
+.status-label {
+  color: #065F46;
+  font-weight: 600;
+}
+
+.status-value {
+  font-weight: 600;
+}
+
+.booking-title {
+  margin: 16px 0 6px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.booking-duration {
+  margin: 0;
+  color: #047857;
+  font-size: 15px;
+}
+
+.booking-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #A7F3D0;
+}
+
+.btn-cancel {
+  background: none;
+  border: none;
+  color: #E11D48;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+}
+
+.btn-cancel:hover {
+  text-decoration: underline;
+}
+
+.booking-rent {
+  color: #065F46;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.pref-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.pref-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #F8FAFC;
+  border-radius: 14px;
+  padding: 18px 20px;
+}
+
+.pref-value {
+  font-weight: 600;
+  font-size: 16px;
+  color: #0F172A;
+}
+
+.pref-label {
+  color: #64748B;
+  font-size: 15px;
+}
+
+.roommates-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.roommate-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  background: #F8FAFC;
+  border: 1px solid #F1F5F9;
+  border-radius: 16px;
+  padding: 18px 20px;
+}
+
+.roommate-name {
+  margin: 0 0 4px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.roommate-meta {
+  margin: 0;
+  color: #64748B;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.roommate-initials {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: #E0E7FF;
+  color: #4F46E5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.footer {
+  margin-top: 80px;
+  background: #0F172A;
+  color: #CBD5E1;
+  padding: 56px 120px 24px;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1.4fr;
+  gap: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #1E293B;
+}
+
+.footer-col h5 {
+  margin: 0 0 16px;
+  color: #FFFFFF;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.footer-col p {
+  margin: 0;
+  color: #94A3B8;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.footer-col a {
+  display: block;
+  margin-bottom: 10px;
+  color: #94A3B8;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.footer-col a:hover {
+  color: #FFFFFF;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.footer-logo {
+  height: 44px;
+}
+
+.footer-name {
+  color: #FFFFFF;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 24px;
+  color: #64748B;
+  font-size: 13px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-links a {
+  color: #94A3B8;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #FFFFFF;
+}
+
+@media (max-width: 900px) {
+  .header {
+    padding: 16px 24px;
+  }
+
+  .grid-two,
+  .roommates-grid,
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    padding: 40px 24px 24px;
+  }
+
+  .profile-card {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .profile-info {
+    text-align: center;
+  }
+
+  .chips {
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+}
