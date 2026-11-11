@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakanak - Login & Sign Up</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/login/style.css">
+</head>
+<body class="custom-body min-h-screen flex flex-col justify-between">
+    <header class="py-6 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="custom-logo flex items-center gap-2">
+                <img class="custom-logo-icon" src="../../assets/images/logo.png">
+                <p class="sak">Sak<span class="anak">anak</span></p>
+            </a>
+            <a href="index.html" class="custom-back-link flex items-center gap-1">
+                ← Back to Home
+            </a>
+        </div>
+    </header>
+ 
+<main class="max-w-4xl w-full mx-auto p-4 sm:p-6 mt-8 mb-20">
+    <div class="w-full min-h-[450px] custom-card p-6 sm:p-10 overflow-hidden">
+
+        <!-- Login Form -->
+        <form id="form-login" class="space-y-5">
+            <div class="text-center space-y-1">
+                <h2 class="text-2xl font-black text-slate-900">Welcome Back! 👋</h2>
+                <p class="text-xs text-slate-500">Enter your account details to proceed to your accommodation or properties</p>
+            </div>
+
+            <div class="grid grid-cols-3 gap-2 p-1 custom-role-selector text-center text-xs font-semibold">
+                <label class="cursor-pointer p-2 rounded-lg has-[:checked]:bg-indigo-600 has-[:checked]:text-white transition">
+                    <input type="radio" name="login_role" value="student" checked class="hidden">
+                    Student
+                </label>
+                <label class="cursor-pointer p-2 rounded-lg has-[:checked]:bg-indigo-600 has-[:checked]:text-white transition">
+                    <input type="radio" name="login_role" value="landlord" class="hidden">
+                    Landlord
+                </label>
+                <label class="cursor-pointer p-2 rounded-lg has-[:checked]:bg-indigo-600 has-[:checked]:text-white transition">
+                    <input type="radio" name="login_role" value="admin" class="hidden">
+                    Admin
+                </label>
+            </div>
+
+            <div id="login-identifier-container" class="space-y-1">
+                <label id="login-identifier-label" for="login-identifier" class="text-xs font-bold text-slate-600">University Email</label>
+                <input type="email" id="login-identifier" placeholder="student@university.edu.eg" class="w-full custom-input px-4 py-3 text-xs font-semibold focus:outline-none">
+            </div>
+
+            <div class="space-y-1">
+                <label for="login-password" class="text-xs font-bold text-slate-600">Password</label>
+                <input type="password" id="login-password" placeholder="••••••••" class="w-full custom-input px-4 py-3 text-xs font-semibold focus:outline-none">
+                <div class="text-right pt-1">
+                    <a href="#" class="text-[11px] font-bold text-indigo-600 hover:underline">Forgot Password?</a>
+                </div>
+            </div>
+
+            <button type="submit" class="w-full custom-btn font-bold py-3 transition text-xs">
+                Log in →
+            </button>
+
+            <div class="text-center pt-3">
+                <p class="text-xs text-slate-500">
+                    Don't have an account?
+                    <button type="button" id="show-signup" class="font-bold text-indigo-600 hover:underline">
+                        Sign Up
+                    </button>
+                </p>
+            </div>
+        </form>
+
+        <!-- 1. Student Sign Up Form -->
+        <form id="form-student" class="space-y-4 hidden">
+            <div class="text-center space-y-1 mb-4">
+                <h2 class="text-2xl font-black text-slate-900">New Student Account 🎓</h2>
+                <p class="text-xs text-slate-500">Register your details to search for accommodation and connect with peers</p>
+                <button type="button" class="back-to-login text-xs font-bold text-indigo-600 hover:underline mt-3">
+                    ← Back to Login
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="space-y-1">
+                    <label for="student-email" class="text-[11px] font-bold text-slate-600">Email *</label>
+                    <input type="email" id="student-email" placeholder="name@example.com" class="w-full custom-input px-3 py-2.5 text-xs font-semibold focus:outline-none" required>
+                </div>
+                <div class="space-y-1">
+                    <label for="student-phone" class="text-[11px] font-bold text-slate-600">Phone Number *</label>
+                    <input type="tel" id="student-phone" placeholder="01012345678" class="w-full custom-input px-3 py-2.5 text-xs font-semibold focus:outline-none" required>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="space-y-1">
+                    <label for="student-dob" class="text-[11px] font-bold text-slate-600">Date of Birth * (Must be over 18)</label>
+                    <input type="date" id="student-dob" class="w-full custom-input px-3 py-2.5 text-xs font-semibold focus:outline-none" required>
+                </div>
+                <div class="space-y-1">
+                    <label for="student-gender" class="text-[11px] font-bold text-slate-600">Gender *</label>
+                    <select id="student-gender" class="w-full custom-input px-3 py-2.5 text-xs font-semibold focus:outline-none" required>
+                        <option value="">Select Gender</option>
+                        <option value="male">Male (Student)</option>
+                        <option value="female">Female (Student)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="space-y-1">
+                <label for="student-university" class="text-[11px] font-bold text-slate-600">University *</label>
+                <input type="text" id="student-university" placeholder="Cairo University" class="w-full custom-input px-3 py-2.5 text-xs font-semibold focus:outline-none" required>
+            </div>
+
+            <button type="submit" class="w-full custom-btn font-bold py-3 transition text-xs mt-4">
+                Create Account →
+            </button>
+        </form>
+
+        <!-- 2. Landlord Sign Up Form -->
+        <form id="form-landlord" class="space-y-4 hidden">
+            <div class="text-center space-y-1 mb-4">
+                <h2 class="text-2xl font-black text-slate-900">Landlord Account 🏠</h2>
+                <p class="text-xs text-slate-500">Register your details to list and manage your properties</p>
+                <button type="button" class="back-to-login text-xs font-bold text-indigo-600 hover:underline mt-3">
+                    ← Back to Login
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="space-y-1">
+                    <label for="landlord-name" class="text-[11px] font-bold text-slate-600">Full Name *</label>
+                    <input type="text" id="landlord-name" placeholder="Your Full Name" class="w-full custom-input px-3 py-2.5 text-xs font-semibold focus:outline-none" required>
+                </div>
+                <div class="space-y-1">
+                    <label for="landlord-email" class="text-[11px] font-bold text-slate-600">Email *</label>
+                    <input type="email" id="landlord-email" placeholder="name@example.com" class="w-full custom-input px-3 py-2.5 text-xs font-semibold focus:outline-none" required>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="space-y-1">
+                    <label for="landlord-phone" class="text-[11px] font-bold text-slate-600">Phone Number *</label>
+                    <input type="tel" id="landlord-phone" placeholder="01012345678" class="w-full custom-input px-3 py-2.5 text-xs font-semibold focus:outline-none" required>
+                </div>
+                <div class="space-y-1">
+                    <label for="landlord-password" class="text-[11px] font-bold text-slate-600">Password *</label>
+                    <input type="password" id="landlord-password" placeholder="Create Password" class="w-full custom-input px-3 py-2.5 text-xs font-semibold focus:outline-none" required>
+                </div>
+            </div>
+
+            <div class="space-y-1">
+                <label for="landlord-address" class="text-[11px] font-bold text-slate-600">Property Address *</label>
+                <input type="text" id="landlord-address" placeholder="Enter Property Address" class="w-full custom-input px-3 py-2.5 text-xs font-semibold focus:outline-none" required>
+            </div>
+
+            <button type="submit" class="w-full custom-btn font-bold py-3 transition text-xs mt-4">
+                Create Landlord Account →
+            </button>
+        </form>
+
+        <!-- 3. Admin Sign Up Form -->
+        <form id="form-admin" class="space-y-4 hidden">
+            <div class="text-center space-y-1 mb-4">
+                <h2 class="text-2xl font-black text-slate-900">Admin Account ⚙️</h2>
+                <p class="text-xs text-slate-500">Create an administrator account to manage the platform</p>
+                <button type="button" class="back-to-login text-xs font-bold text-indigo-600 hover:underline mt-3">
+                    ← Back to Login
+                </button>
+            </div>
+
+            <div class="space-y-1">
+                <label for="admin-name" class="text-[11px] font-bold text-slate-600">Full Name *</label>
+                <input type="text" id="admin-name" placeholder="Admin Full Name" class="w-full custom-input px-3 py-2.5 text-xs font-semibold focus:outline-none" required>
+            </div>
+
+            <div class="space-y-1">
+                <label for="admin-email" class="text-[11px] font-bold text-slate-600">Email *</label>
+                <input type="email" id="admin-email" placeholder="admin@example.com" class="w-full custom-input px-3 py-2.5 text-xs font-semibold focus:outline-none" required>
+            </div>
+
+            <div class="space-y-1">
+                <label for="admin-username" class="text-[11px] font-bold text-slate-600">Username *</label>
+                <input type="text" id="admin-username" placeholder="admin_username" class="w-full custom-input px-3 py-2.5 text-xs font-semibold focus:outline-none" required>
+            </div>
+
+            <div class="space-y-1">
+                <label for="admin-password" class="text-[11px] font-bold text-slate-600">Password *</label>
+                <input type="password" id="admin-password" placeholder="Create Password" class="w-full custom-input px-3 py-2.5 text-xs font-semibold focus:outline-none" required>
+            </div>
+
+            <div class="space-y-1">
+                <label for="admin-code" class="text-[11px] font-bold text-slate-600">Admin Registration Code *</label>
+                <input type="password" id="admin-code" placeholder="Enter Admin Code" class="w-full custom-input px-3 py-2.5 text-xs font-semibold focus:outline-none" required>
+            </div>
+
+            <button type="submit" class="w-full custom-btn font-bold py-3 transition text-xs mt-4">
+                Create Admin Account →
+            </button>
+        </form>
+
+    </div>
+</main>
+    <script src="../../js/login/main.js"></script>
+</body>
+</html>
