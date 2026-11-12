@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakanak - Edit Account & Housing Preferences</title>
+    <link rel="stylesheet" href="../../css/profile-edit-student/style.css">
+</head>
+<body>
+
+    <!-- Top Navigation Bar -->
+    <header class="navbar">
+        <div class="nav-left">
+            <a href="#" class="back-link">
+                <span>&larr;</span> Cancel and return to profile
+            </a>
+        </div>
+
+        <nav class="nav-center">
+            <a href="#" class="active">Account</a>
+            <a href="#">Explore housing</a>
+            <a href="#">Home</a>
+        </nav>
+
+        <div class="nav-right">
+            <a href="#" class="brand-logo">
+                <span class="brand-text">Sak<span class="highlight">anak</span></span>
+                <img src="../../assets/images/logo.png" alt="Sakanak Logo" class="logo-img">
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="main-container">
+        <div class="page-header">
+            <h1>Edit account & housing preferences ✏️</h1>
+            <p>Update your personal details to personalize AI housing recommendations.</p>
+        </div>
+
+        <!-- Form Card -->
+        <form class="settings-card" action="#" method="POST">
+            
+            <!-- Section 1: Personal Details -->
+            <div class="form-section">
+                <div class="section-title-row">
+                    <h2>Personal details</h2>
+                    <!-- User Icon SVG -->
+                    <svg class="section-icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                        <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
+                    </svg>
+                </div>
+
+                <div class="grid-2-cols">
+                    <div class="form-group">
+                        <label for="phone">Phone number (unique)</label>
+                        <input type="tel" id="phone" name="phone" placeholder="e.g. 01012345678">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fullname">Full name</label>
+                        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="governorate">Home governorate</label>
+                        <input type="text" id="governorate" name="governorate" placeholder="e.g. Cairo, Giza, Red Sea">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="university">University & faculty</label>
+                        <input type="text" id="university" name="university" placeholder="e.g. EELU - Computers & IT">
+                    </div>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <!-- Section 2: AI Housing Preferences -->
+            <div class="form-section">
+                <div class="section-title-row">
+                    <h2>AI housing preferences</h2>
+                    <!-- Gear Icon SVG -->
+                    <svg class="section-icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                        <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.488.488 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.484.484 0 0 0-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+                    </svg>
+                </div>
+
+                <div class="grid-3-cols">
+                    <div class="form-group">
+                        <label for="distance">Max. distance to campus (km)</label>
+                        <input type="number" id="distance" name="distance" placeholder="e.g. 5" min="1">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="room-type">Preferred room type</label>
+                        <select id="room-type" name="room_type">
+                            <option value="single">Single (private room)</option>
+                            <option value="double">Double (shared by two)</option>
+                            <option value="triple">Triple (shared by three)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="budget">Maximum monthly budget (EGP)</label>
+                        <input type="number" id="budget" name="budget" placeholder="e.g. 3000" step="100">
+                    </div>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <!-- Action Buttons -->
+            <div class="form-actions">
+                <button type="submit" class="btn-save">
+                    Save changes 💾
+                </button>
+                <button type="button" class="btn-cancel">
+                    Cancel
+                </button>
+            </div>
+
+        </form>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Sakanak - Student Housing Portal</p>
+    </footer>
+
+    <!-- JavaScript File -->
+    <script src="../../js/profile-edit-student/main.js"></script>
+</body>
+</html>
