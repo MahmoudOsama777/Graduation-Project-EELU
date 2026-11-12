@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakanak - Edit Landlord Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Top Navigation Bar -->
+    <header class="navbar">
+        <div class="nav-left">
+            <a href="#" class="back-link">
+                <span>&larr;</span> Cancel and return to owner profile
+            </a>
+        </div>
+
+        <nav class="nav-center">
+            <a href="#" class="active">Dashboard</a>
+            <a href="#">Explore housing</a>
+            <a href="#">Home</a>
+        </nav>
+
+        <div class="nav-right">
+            <a href="#" class="brand-logo">
+                <span class="brand-text">Sak<span class="highlight">anak</span></span>
+                <img src="Sakanak_Logo.png" alt="Sakanak Logo" class="logo-img">
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="main-container">
+        
+        <!-- Top Info Bar inside Page -->
+        <div class="top-action-bar">
+            <div class="verified-badge-box">
+                <span class="badge-text">Verified landlord account</span>
+                <span class="check-icon">&#10003;</span>
+            </div>
+            
+            <div class="page-header-inline">
+                <h1>Edit landlord details ⚙️</h1>
+                <p>Update your personal contact details for students.</p>
+            </div>
+        </div>
+
+        <!-- Form Card -->
+        <form class="settings-card" action="#" method="POST">
+            
+            <!-- Section: Profile Photo -->
+            <div class="profile-photo-section">
+                <div class="photo-info">
+                    <h3>Profile photo</h3>
+                    <p>Students will see this photo when browsing available housing (JPG or PNG).</p>
+                </div>
+                <div class="avatar-wrapper" title="Click to upload photo">
+                    <div class="avatar-box" id="avatarDisplay">AM</div>
+                    <div class="camera-badge">📷</div>
+                    <input type="file" id="photoInput" accept="image/png, image/jpeg" hidden>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <!-- Section 2: Personal & Contact Details -->
+            <div class="form-section">
+                <div class="section-title-row">
+                    <h2>Personal & contact details</h2>
+                    <!-- User Icon SVG -->
+                    <svg class="section-icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                        <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
+                    </svg>
+                </div>
+
+                <div class="grid-3-cols">
+                    <div class="form-group">
+                        <label for="governorate">Home governorate / city *</label>
+                        <input type="text" id="governorate" name="governorate" placeholder="e.g. Cairo, Giza" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Contact phone number (unique) *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="e.g. 01012345678" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fullname">Full name (as on national ID) *</label>
+                        <input type="text" id="fullname" name="fullname" placeholder="Enter full name" required>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <!-- Section 3: National ID Verification Details -->
+            <div class="verification-box">
+                <div class="verification-header">
+                    <span class="verified-pill">Verified</span>
+                    <div class="verification-title-area">
+                        <h4>National ID verification details:</h4>
+                        <span class="shield-icon">🛡️</span>
+                    </div>
+                </div>
+
+                <div class="verification-grid">
+                    <div class="ver-item">
+                        <span class="ver-label">Documents:</span>
+                        <span class="ver-value">National ID photo reviewed and approved by admin</span>
+                    </div>
+                    <div class="ver-item">
+                        <span class="ver-label">Registered national ID:</span>
+                        <span class="ver-value id-number">29805XXXXXXXXX</span>
+                    </div>
+                </div>
+
+                <div class="verification-notice">
+                    <span>ℹ️</span> To change your national ID or official documents, contact support directly to avoid losing your verification badge.
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <!-- Action Buttons -->
+            <div class="form-actions">
+                <button type="submit" class="btn-save">
+                    Save changes 💾
+                </button>
+                <button type="button" class="btn-cancel">
+                    Cancel
+                </button>
+            </div>
+
+        </form>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Sakanak - Landlord Edit Profile Portal</p>
+    </footer>
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>
