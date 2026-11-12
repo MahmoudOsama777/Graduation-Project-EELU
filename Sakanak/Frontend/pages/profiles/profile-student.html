@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Profile | Sakanak</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/profile-student/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-left">
+      <a href="#" class="logout-link">Log out</a>
+    </div>
+
+    <nav class="header-nav">
+      <a href="#" class="nav-link active">Account</a>
+      <a href="#" class="nav-link">About us</a>
+      <a href="#" class="nav-link">Home</a>
+    </nav>
+
+    <div class="header-right">
+      <a href="../../../../index.html" class="img-logo">
+        <img src="../../assets/images/logo.png" alt="Sakanak logo">
+        <h2><span><strong>S</strong></span>akanak</h2>
+      </a>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="card profile-card">
+      <button class="btn-edit" type="button">Edit details</button>
+
+      <div class="profile-info">
+        <h1 class="profile-name" id="profileName">Ahmed Mohamed Ibrahim</h1>
+        <p class="profile-subtitle">Engineering student • Cairo University</p>
+
+        <div class="chips">
+          <span class="chip chip-small">Male</span>
+          <span class="chip chip-age">Age: 21</span>
+          <span class="chip chip-gov">Governorate: Sharqia</span>
+        </div>
+      </div>
+
+      <div class="avatar">
+        <svg viewBox="0 0 24 24" width="56" height="56" fill="#4F46E5" aria-hidden="true">
+          <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/>
+        </svg>
+      </div>
+    </section>
+
+    <div class="grid-two">
+      <section class="card">
+        <h2 class="card-title">Current booking status</h2>
+
+        <div class="booking-box">
+          <span class="status-badge">
+            <span class="status-label">Status:</span>
+            <span class="status-value">Confirmed</span>
+          </span>
+
+          <h3 class="booking-title">Premium apartment — Dokki</h3>
+          <p class="booking-duration">Rental: 3 months (until the end of the semester)</p>
+
+          <div class="booking-footer">
+            <button class="btn-cancel" type="button" id="cancelBtn">Cancel booking</button>
+            <span class="booking-rent">Monthly rent: EGP 3,200</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-head">
+          <h2 class="card-title">AI housing preferences</h2>
+          <span class="icon-badge" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#64748B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+            </svg>
+          </span>
+        </div>
+
+        <div class="pref-list">
+          <div class="pref-row">
+            <span class="pref-value">3,500 EGP</span>
+            <span class="pref-label">Monthly budget:</span>
+          </div>
+          <div class="pref-row">
+            <span class="pref-value">Double (shared)</span>
+            <span class="pref-label">Preferred room type:</span>
+          </div>
+          <div class="pref-row">
+            <span class="pref-value">2.0 km</span>
+            <span class="pref-label">Max. campus distance:</span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="card">
+      <div class="card-head">
+        <h2 class="card-title">Current roommates</h2>
+        <span class="icon-badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="#64748B">
+            <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+          </svg>
+        </span>
+      </div>
+      <p class="card-subtitle">Basic details shared with students in the same housing</p>
+
+      <div class="roommates-grid" id="roommatesGrid"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-col">
+        <h5>SAFETY & VERIFICATION</h5>
+        <p>All housing owners are verified through national ID checks by our team to ensure a safe student community.</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>YOUR ACCOUNT</h5>
+        <a href="#">Log in</a>
+        <a href="#">Create account</a>
+        <a href="#">Student / landlord profile</a>
+      </div>
+
+      <div class="footer-col">
+        <h5>QUICK LINKS</h5>
+        <a href="../../../../index.html">Home</a>
+        <a href="#">Explore housing</a>
+        <a href="#">About us</a>
+      </div>
+
+      <div class="footer-col footer-brand-col">
+        <div class="footer-brand">
+          <img src="../../assets/images/logo.png" alt="Sakanak logo" class="footer-logo">
+          <span class="footer-name">Sakanak</span>
+        </div>
+        <p>A platform connecting students away from home with verified housing owners, safely and easily with AI.</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-links">
+        <a href="#">Support</a>
+        <a href="#">Terms of use</a>
+        <a href="#">Privacy policy</a>
+      </div>
+      <p>© 2026 Sakanak — All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../../js/profile-student/main.js"></script>
+</body>
+</html>

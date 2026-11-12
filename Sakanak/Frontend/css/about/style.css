@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #F8FAFC;
+    color: #1E293B;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #E2E8F0;
+    position: relative;
+}
+
+.nav-left {
+    display: flex;
+    gap: 30px;
+    margin: 0 auto;
+}
+
+.nav-link {
+    color: #64748B;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #7C3AED;
+}
+
+.nav-logo {
+    position: absolute;
+    right: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-dark {
+    font-size: 26px;
+    font-weight: 700;
+    color: #0F172A;
+}
+
+.logo-purple {
+    font-size: 26px;
+    font-weight: 700;
+    color: #7C3AED;
+}
+
+.logo-icon-box {
+    background-color: #7C3AED;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 8px;
+}
+
+.logo-icon-box img {
+    height: 24px;
+    width: auto;
+    filter: brightness(0) invert(1);
+}
+
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.badge {
+    background-color: #F3E8FF;
+    color: #7C3AED;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 24px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    color: #0F172A;
+}
+
+.hero h1 .highlight {
+    color: #7C3AED;
+}
+
+.hero p {
+    color: #64748B;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    flex: 1;
+    border: 1px solid #F1F5F9;
+}
+
+.icon-box {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.icon-box img {
+    width: 24px;
+    height: 24px;
+}
+
+.icon-purple { background-color: #F3E8FF; }
+.icon-green { background-color: #DCFCE7; }
+.icon-blue { background-color: #DBEAFE; }
+
+.card h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: #0F172A;
+}
+
+.card p {
+    color: #64748B;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.stats-bar {
+    background-color: #0F172A;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+    margin: 60px 50px;
+    border-radius: 20px;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat h2 {
+    color: #818CF8;
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.stat p {
+    color: #94A3B8;
+    font-size: 14px;
+}
+
+.footer {
+    background-color: #0F172A;
+    color: #ffffff;
+    padding: 60px 50px 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+.footer-col {
+    flex: 1;
+}
+
+.footer-col h4 {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+}
+
+.footer-col p {
+    color: #94A3B8;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    color: #94A3B8;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid #1E293B;
+    color: #64748B;
+    font-size: 14px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+}
