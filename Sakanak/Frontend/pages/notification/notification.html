@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notifications & Alerts | Sakanak</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/notification/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#" class="logo" aria-label="Sakanak home">
+        <span class="logo-text">Sak<span>anak</span></span>
+        <span class="logo-icon">
+          <img src="../../assets/images/logo.png" alt="logo" class="logo-img" width="40" height="40">
+        </span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="../../../../index.html">Home</a>
+        <a href="#">Explore</a>
+        <a href="#">Booking</a>
+        <a href="../about/about.html">About</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" aria-label="Profile">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="#111827" aria-hidden="true">
+            <circle cx="12" cy="8" r="4" />
+            <path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z" />
+          </svg>
+        </button>
+        <button class="icon-btn bell-btn" id="bellBtn" aria-label="Notifications">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#111827" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 9a6 6 0 0 1 12 0c0 6 2.5 7.5 2.5 7.5h-17S6 15 6 9z" />
+            <path d="M10 20a2 2 0 0 0 4 0" />
+          </svg>
+          <span class="bell-dot" id="bellDot"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main class="page">
+    <section class="notifications">
+      <div class="page-head">
+        <div>
+          <h1>
+            Notifications &amp; Alerts
+            <span class="badge" id="newBadge">3 New</span>
+          </h1>
+          <p class="subtitle">Track real-time updates regarding your bookings, payments, and account status</p>
+        </div>
+        <button class="mark-read" id="markAllBtn">Mark all as read ✓</button>
+      </div>
+
+      <div class="notif-list" id="notifList">
+
+        <article class="notif unread accent-indigo" data-unread="true">
+          <div class="notif-icon icon-indigo">💳</div>
+          <div class="notif-body">
+            <div class="notif-top">
+              <h2>Landlord approved your request! (48h Payment window started)</h2>
+              <time>15 mins ago</time>
+            </div>
+            <p>Landlord <strong>Ahmed Mahmoud</strong> approved your booking request for Dokki Apartment. You have <strong>48 hours</strong> to complete the payment simulation and confirm your reservation.</p>
+          </div>
+        </article>
+
+        <article class="notif unread accent-amber" data-unread="true">
+          <div class="notif-icon icon-amber">⏳</div>
+          <div class="notif-body">
+            <div class="notif-top">
+              <h2>Booking request submitted successfully (Pending)</h2>
+              <time>2 hours ago</time>
+            </div>
+            <p>Your request for "El-Abbaseya Female Housing" has been logged and held temporarily pending landlord approval.</p>
+          </div>
+        </article>
+
+        <article class="notif unread accent-green" data-unread="true">
+          <div class="notif-icon icon-green">🛡️</div>
+          <div class="notif-body">
+            <div class="notif-top">
+              <h2>Your account is now verified! (Verified Landlord)</h2>
+              <time>1 day ago</time>
+            </div>
+            <p>Your National ID document was reviewed and approved by Admin. You can now post housing units and receive student bookings.</p>
+          </div>
+        </article>
+
+        <article class="notif read">
+          <div class="notif-icon icon-gray">✨</div>
+          <div class="notif-body">
+            <div class="notif-top">
+              <h2>New housing match found for your preferences</h2>
+              <time>3 days ago</time>
+            </div>
+            <p>AI Recommendation system found a new apartment 0.8 km from your university priced at 3,200 EGP matching your registered budget.</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h3>Safety &amp; Verification</h3>
+          <p>All housing owners are verified through national ID checks by our team to ensure a safe student community.</p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Your Account</h3>
+          <ul>
+            <li><a href="#">Log in</a></li>
+            <li><a href="#">Create account</a></li>
+            <li><a href="#">Student / landlord profile</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Explore housing</a></li>
+            <li><a href="#">About us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span>Sakanak</span>
+            <span class="logo-icon">
+              <img src="../../assets/images/logo.png" alt="logo" class="logo-img" width="40" height="40">
+            </span>
+          </div>
+          <p>A platform connecting students away from home with verified housing owners, safely and easily with AI.</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-links">
+          <a href="#">Support</a>
+          <a href="#">Terms of use</a>
+          <a href="#">Privacy policy</a>
+        </div>
+        <span>© 2026 Sakanak — All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../js/notification/main.js"></script>
+</body>
+</html>
