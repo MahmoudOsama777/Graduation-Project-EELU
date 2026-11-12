@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Add a new student housing property to Sakanak.">
+  <title>Add a Property | Sakanak</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="back-link" href="#" id="backLink">← Cancel and return to owner profile</a>
+      <a class="brand" href="#" aria-label="Sakanak home">
+        <span class="brand-name">Sak<span>anak</span></span>
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" role="img">
+            <path d="M5 17.5 20 5l15 12.5v17H5z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+            <path d="M14 34V22h12v12M16 15h.1M24 15h.1M20 11v8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+            <circle cx="29.5" cy="28.5" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </span>
+      </a>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <div class="page-heading">
+      <h1>List a new property</h1>
+      <p>Add the housing details and amenities. Student capacity is calculated automatically.</p>
+    </div>
+
+    <form class="property-card" id="propertyForm">
+      <section class="form-section basic-section">
+        <h2>Basic property details</h2>
+
+        <div class="field full-field">
+          <label for="propertyName">Housing name / apartment title <span>*</span></label>
+          <input id="propertyName" name="propertyName" type="text" placeholder="e.g. Bright student apartment" required>
+        </div>
+
+        <div class="field-grid three-columns">
+          <div class="field">
+            <label for="monthlyRent">Monthly rent (EGP) <span>*</span></label>
+            <input id="monthlyRent" name="monthlyRent" type="number" min="1" step="1" placeholder="e.g. 2500" required>
+          </div>
+          <div class="field">
+            <label for="housingType">Student housing type <span>*</span></label>
+            <select id="housingType" name="housingType" required>
+              <option value="" selected disabled>Select type</option>
+              <option value="Shared apartment">Shared apartment</option>
+              <option value="Private room">Private room</option>
+              <option value="Studio">Studio</option>
+              <option value="Shared room">Shared room</option>
+              <option value="Student residence">Student residence</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="district">Area / district <span>*</span></label>
+            <input id="district" name="district" type="text" placeholder="e.g. Nasr City" required>
+          </div>
+        </div>
+      </section>
+
+      <section class="form-section photos-section">
+        <div class="section-topline">
+          <p class="helper-text">Up to 5 photos (JPG / PNG)</p>
+          <h2>Housing photos <span>*</span></h2>
+        </div>
+        <input class="visually-hidden" id="photos" name="photos" type="file" accept="image/jpeg,image/png" multiple>
+        <label class="upload-zone" id="uploadZone" for="photos" tabindex="0">
+          <span class="upload-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5M4 15.5v3A1.5 1.5 0 0 0 5.5 20h13a1.5 1.5 0 0 0 1.5-1.5v-3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <strong>Click to upload or drag and drop photos</strong>
+          <span class="upload-note">Supported: JPG, PNG (max. 5 MB per photo)</span>
+        </label>
+        <div class="photo-preview" id="photoPreview" aria-live="polite"></div>
+        <p class="field-error" id="photoError"></p>
+      </section>
+
+      <section class="form-section capacity-section">
+        <h2>Rooms &amp; student capacity (automatic)</h2>
+        <div class="field-grid three-columns capacity-grid">
+          <div class="field calculated-field">
+            <label>Calculated total capacity</label>
+            <output id="capacityOutput">0 students (0 rooms × 0)</output>
+          </div>
+          <div class="field">
+            <label for="studentsPerRoom">Students per room <span>*</span></label>
+            <input id="studentsPerRoom" name="studentsPerRoom" type="number" min="1" max="20" step="1" placeholder="e.g. 2" required>
+          </div>
+          <div class="field">
+            <label for="numberOfRooms">Number of rooms <span>*</span></label>
+            <input id="numberOfRooms" name="numberOfRooms" type="number" min="1" max="100" step="1" placeholder="e.g. 3" required>
+          </div>
+        </div>
+      </section>
+
+      <section class="form-section amenities-section">
+        <h2>Amenities &amp; services</h2>
+        <div class="field-grid three-columns">
+          <div class="field">
+            <label for="elevator">Elevator available</label>
+            <select id="elevator" name="elevator">
+              <option value="" selected disabled>Select option</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="floorNumber">Floor number <span>*</span></label>
+            <input id="floorNumber" name="floorNumber" type="number" min="0" max="200" step="1" placeholder="e.g. 2" required>
+          </div>
+          <div class="field">
+            <label for="internetSpeed">Internet speed (Mbps) <span>*</span></label>
+            <input id="internetSpeed" name="internetSpeed" type="number" min="1" step="1" placeholder="e.g. 50" required>
+          </div>
+        </div>
+      </section>
+
+      <div class="form-actions">
+        <button class="button button-primary" type="submit">Publish property</button>
+        <button class="button button-secondary" type="reset" id="cancelButton">Cancel</button>
+      </div>
+      <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
+    </form>
+  </main>
+</body>
+</html>
