@@ -3,22 +3,189 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sakanak Home.">
-  <title>Home | Sakanak</title>
-  <link rel="stylesheet" href="Sakanak/Frontend/css/home/style.css">
-  <script src="js/script.js" defer></script>
+  <meta name="description" content="Find your ideal student home with Sakanak.">
+  <title>Sakanak | Student Housing</title>
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="Sakanak/Frontend/css/dashbord/style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="back-link" href="#" id="backLink"></a>
+  <nav class="site-nav">
+    <div class="nav-inner">
       <a class="brand" href="index.html" aria-label="Sakanak home">
-        <span class="brand-name">Sak<span>anak</span></span>
-        <span class="brand-mark" aria-hidden="true">
-          <img src="Sakanak/Frontend/assets/images/logo.png" alt="Logo" width="40" height="40"> 
-        </span>
+        <span>Sak<span class="brand-accent">anak</span></span>
+        <img src="Sakanak/Frontend/assets/images/logo.png"
+        alt="Sakanak Logo"
+        class="brand-mark">
       </a>
+
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
+
+      <div class="nav-menu" id="navMenu">
+        <a class="nav-link active" href="index.html">Home</a>
+        <a class="nav-link" href="Sakanak/Frontend/pages/dashbord/explore.html">Explore</a>
+        <a class="nav-link" href="Sakanak/Frontend/pages/about/about.html">About</a>
+      </div>
+
+      <div class="nav-actions">
+        <a class="login-link" href="Sakanak/Frontend/pages/login/login.html">Log in</a>
+        <button class="notification-btn" type="button" aria-label="Notifications">♧<span></span></button>
+      </div>
     </div>
-  </header>
+  </nav>
+
+  <main>
+    <section class="hero-section">
+      <div class="trust-pill"><span>✦</span> Trusted monthly student housing in Egypt</div>
+      <h1>Find your ideal<br>student home<br><span>Safe and AI-powered</span></h1>
+      <p class="hero-description">Explore rooms near your university, meet your roommates, and book directly with verified<br class="desktop-break"> owners.</p>
+
+      <form class="hero-search" id="homeSearch" action="Sakanak/Frontend/pages/dashbord/explore.html" method="get">
+        <button class="find-btn" type="submit">Find housing <span>⌕</span></button>
+        <label class="search-control">
+          <span>MONTHLY BUDGET (EGP)</span>
+          <select name="budget" aria-label="Monthly budget">
+            <option value="">From 3,000 - 5,000 EGP</option>
+            <option value="3000">Up to 3,000 EGP</option>
+            <option value="5000">Up to 5,000 EGP</option>
+            <option value="7000">Up to 7,000 EGP</option>
+            <option value="10000">Up to 10,000 EGP</option>
+          </select>
+        </label>
+        <label class="search-control">
+          <span>ROOM TYPE</span>
+          <select name="type" aria-label="Room type">
+            <option value="">All</option>
+            <option value="single">Single</option>
+            <option value="double">Double</option>
+            <option value="triple">Triple</option>
+          </select>
+        </label>
+        <label class="search-control">
+          <span>MAX. CAMPUS DISTANCE</span>
+          <select name="distance" aria-label="Maximum campus distance">
+            <option value="">All</option>
+            <option value="1">Under 1 km</option>
+            <option value="3">Up to 3 km</option>
+            <option value="5">Up to 5 km</option>
+          </select>
+        </label>
+        <label class="search-control">
+          <span>AREA / UNIVERSITY</span>
+          <select name="area" aria-label="Area or university">
+            <option value="">Cairo University</option>
+            <option value="cairo">Cairo University</option>
+            <option value="ain-shams">Ain Shams University</option>
+            <option value="mansoura">Mansoura University</option>
+          </select>
+        </label>
+      </form>
+    </section>
+    <section class="ai-band" id="about">
+      <div class="ai-inner">
+        <div class="chat-preview">
+          <div class="chat-topline"><span>UNITSHELTER AI IS READY TO HELP</span><i></i></div>
+          <div class="chat-message">“For your EGP 3,000 budget and medical studies, try ‘Roommates Housing – Dekki’ just 1.2 km away, with 100 Mbps Wi-Fi. Only 1 spot left!”</div>
+          <div class="chat-bottom">
+            <button type="button" class="ask-ai-btn">Ask AI</button>
+            <span>Ask about housing or amenities...</span>
+          </div>
+        </div>
+        <div class="ai-copy">
+          <span class="ai-label">✦ AI Housing Assistant</span>
+          <h2>Ask naturally. Get instant,<br> detailed recommendations!</h2>
+          <p>Our AI analyzes your needs, budget, and preferred distance to recommend the best housing and explain why it fits.</p>
+          <div class="suggestion">“Near Cairo Engineering, under 3,500, fast Wi-Fi”</div>
+          <div class="suggestion">“Best women's housing with a gym in Maadi?”</div>
+        </div>
+      </div>
+    </section>
+    <section class="available-section">
+      <div class="available-heading">
+        <div class="sort-mini">
+          <label for="homeSort">Sort by:</label>
+          <select id="homeSort" aria-label="Sort housing">
+            <option value="low">Lowest price</option>
+            <option value="high">Highest price</option>
+            <option value="rating">Highest rating</option>
+          </select>
+        </div>
+        <div>
+          <h2>Housing available now</h2>
+          <p>Capacity and availability update automatically</p>
+        </div>
+      </div>
+
+      <div class="home-properties" id="homeProperties">
+        <article class="property-card home-property" data-price="5200" data-rating="4.7" data-type="single" data-distance="0.3" data-area="mansoura">
+          <div class="property-photo">
+            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85" alt="Modern furnished studio apartment">
+            <span class="status-tag unavailable">Full (Unavailable)</span>
+          </div>
+          <div class="property-body">
+            <div class="property-meta"><span class="rating">★ 4.7</span><span class="owner">Eng. Karim Hassan <b> K.H </b><small>Verified owner</small></span></div>
+            <h3>Luxury studio near Mansoura University</h3>
+            <p class="location">📍 University District, Mansoura • 0.3 km</p>
+            <div class="unavailable-note">● Fully booked. Not accepting new requests.</div>
+          </div>
+        </article>
+
+        <article class="property-card home-property" data-price="4500" data-rating="4.9" data-type="single" data-distance="1.5" data-area="ain-shams">
+          <div class="property-photo">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85" alt="Bright furnished women's student apartment">
+            <span class="gender-tag">♀ Female students</span>
+            <span class="status-tag available">Available (single)</span>
+          </div>
+          <div class="property-body">
+            <div class="property-meta"><span class="rating">★ 4.9</span><span class="owner">✓ Dr. Sara Ali <b>Dr.S</b><small>Verified owner</small></span></div>
+            <h3>Quiet, equipped women’s housing near Ain Shams Medicine</h3>
+            <p class="location">📍 Abbassia, Cairo • 1.5 km from campus</p>
+            <div class="amenities"><span>▦ Floor 2</span><span>🚀 200 Mbps</span><span>🛏 2 single rooms</span></div>
+            <div class="property-bottom"><a href="details.html?id=2">Details →</a><span class="residents">♟ Residents: 1 student</span></div>
+            <div class="price"><strong>4,500</strong> EGP / month</div>
+          </div>
+        </article>
+
+        <article class="property-card home-property" data-price="3200" data-rating="4.8" data-type="double" data-distance="0.8" data-area="cairo">
+          <div class="property-photo">
+            <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=900&q=85" alt="Modern shared student room with bunk beds">
+            <span class="gender-tag">♂ Male students</span>
+            <span class="status-tag available">Available (2 spots)</span>
+          </div>
+          <div class="property-body">
+            <div class="property-meta"><span class="rating">★ 4.8</span><span class="owner">✓ Ahmed Mahmoud <b>AM</b><small>Verified owner</small></span></div>
+            <h3>Premium apartment near the faculty complex</h3>
+            <p class="location">📍 Dokki, Giza • 0.8 km from Cairo University</p>
+            <div class="amenities"><span>▦ Floor 3 (lift)</span><span>🚀 100 Mbps</span><span>🛏 2 twin rooms</span></div>
+            <div class="property-bottom"><a href="details.html?id=3">Details →</a><span class="residents">♟ Residents: 4 students</span></div>
+            <div class="price"><strong>3,200</strong> EGP / month</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- BOOKING STEPS -->
+    <section class="booking-steps-section">
+      <div class="section-title">
+        <h2>How does timed booking work?</h2>
+        <p>A fair booking system that protects students and housing owners</p>
+      </div>
+      <div class="booking-steps">
+        <article class="booking-step step-review"><span class="step-number">4</span><h3>Review (Completed)</h3><p>After your rental ends, you can review the housing, the owner, and even...</p></article>
+        <article class="booking-step step-payment"><span class="step-number">3</span><h3>Payment (Confirmed)</h3><p>After a successful simulated payment, your booking is confirmed for the rental period.</p></article>
+        <article class="booking-step step-owner"><span class="step-number">2</span><h3>Owner approval (Accepted)</h3><p>Once accepted, you have just 48 hours to complete the test payment.</p></article>
+        <article class="booking-step step-apply"><span class="step-number">1</span><h3>Apply (Pending)</h3><p>Your spot is held immediately so no one else can book it while the owner responds.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="index.html">Sak<span class="brand-accent">anak</span>
+      <img src="Sakanak/Frontend/assets/images/logo.png" alt="Sakanak Logo" class="brand-mark">
+    <p>Find your place. Feel at home.</p>
+    <small>© <span id="currentYear">2026</span> Sakanak. All rights reserved.</small>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="Sakanak/Frontend/js/dashbord/main.js" defer></script>
 </body>
 </html>
